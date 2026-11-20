@@ -1,18 +1,71 @@
-/* Shared site interactions */
+/* Shared interactions for Chef Abbys World */
 (() => {
   const assets = window.CHEF_ABBYS_IMAGES || {};
-  document.querySelectorAll('[data-image]').forEach(el => {
-    const src = assets[el.dataset.image];
-    if (src) el.src = src;
+
+  document.querySelectorAll('[data-image]').forEach((element) => {
+    const source = assets[element.dataset.image];
+    if (source) element.src = source;
   });
-  document.querySelectorAll('[data-bg-image]').forEach(el => {
-    const src = assets[el.dataset.bgImage];
-    if (src) el.style.backgroundImage = `url("${src}")`;
+  document.querySelectorAll('[data-bg-image]').forEach((element) => {
+    const source = assets[element.dataset.bgImage];
+    if (source) element.style.backgroundImage = `url("${source}")`;
   });
-  document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+  document.querySelectorAll('[data-year]').forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
+
+  const welcomeMark = document.querySelector('.akwaaba-mark');
+  if (welcomeMark && 'IntersectionObserver' in window) {
+    const welcomeObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.45 });
+    welcomeObserver.observe(welcomeMark);
+  } else {
+    welcomeMark?.classList.add('is-visible');
+  }
+
+  const header = document.querySelector('[data-header]');
+  let previousScroll = window.scrollY;
+  let ticking = false;
+  const updateHeader = () => {
+    if (!header) return;
+    const currentScroll = Math.max(0, window.scrollY);
+    const navOpen = document.body.classList.contains('nav-open');
+    header.classList.toggle('is-scrolled', currentScroll > 24);
+
+    if (navOpen || currentScroll < 8) {
+      header.classList.remove('is-hidden');
+    } else if (currentScroll > previousScroll + 1) {
+      header.classList.add('is-hidden');
+    } else if (currentScroll < previousScroll - 1) {
+      header.classList.remove('is-hidden');
+    }
+    previousScroll = currentScroll;
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateHeader();
 
   const toggle = document.querySelector('[data-nav-toggle]');
   const nav = document.querySelector('[data-nav]');
+  const closeNavigation = () => {
+    if (!toggle || !nav) return;
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation');
+    document.body.classList.remove('nav-open');
+    header?.classList.remove('is-hidden');
+  };
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') !== 'true';
@@ -20,32 +73,74 @@
       toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
       nav.classList.toggle('is-open', isOpen);
       document.body.classList.toggle('nav-open', isOpen);
+      if (isOpen) header?.classList.remove('is-hidden');
     });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Open navigation');
-      document.body.classList.remove('nav-open');
-    }));
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNavigation));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeNavigation();
+    });
   }
-  const navKey = {home:'home',about:'about',explore:'explore',recipes:'recipes',casof:'casof',journal:'journal',feast:'feast',work:'work',contact:'work'}[document.body.dataset.page];
-  document.querySelectorAll('[data-nav-link]').forEach(a => {
-    if (a.dataset.navLink === navKey) a.classList.add('is-current');
+
+  const navKey = {
+    home: 'home', about: 'about', explore: 'explore', recipes: 'recipes',
+    casof: 'casof', journal: 'journal', feast: 'feast', work: 'work'
+  }[document.body.dataset.page];
+  document.querySelectorAll('[data-nav-link]').forEach((link) => {
+    if (link.dataset.navLink === navKey) link.classList.add('is-current');
   });
-  document.querySelectorAll('[data-newsletter], [data-demo-form]').forEach(form => form.addEventListener('submit', e => {
-    e.preventDefault();
-    const feedback = form.querySelector('.form-feedback');
-    if (feedback) feedback.textContent = form.hasAttribute('data-newsletter')
-      ? 'Thanks for joining. Connect this form to the mailing list provider before launch.'
-      : 'Thank you. This demo enquiry is ready. Connect a form service to receive real submissions.';
-    form.reset();
-  }));
+
+  // The credit drawer is intentionally lightweight and works with keyboard input.
+  const drawer = document.querySelector('[data-credit-drawer]');
+  const creditOpen = document.querySelector('[data-credit-open]');
+  const creditCloseButtons = document.querySelectorAll('[data-credit-close]');
+  const closeCreditDrawer = () => {
+    if (!drawer) return;
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('credit-open');
+    creditOpen?.focus({ preventScroll: true });
+  };
+  if (drawer && creditOpen) {
+    creditOpen.addEventListener('click', () => {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('credit-open');
+      drawer.querySelector('.credit-close')?.focus({ preventScroll: true });
+    });
+    creditCloseButtons.forEach((button) => button.addEventListener('click', closeCreditDrawer));
+    drawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('credit-open');
+    }));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.classList.contains('is-open')) closeCreditDrawer();
+    });
+  }
+
+  document.querySelectorAll('[data-newsletter], [data-demo-form]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const feedback = form.querySelector('.form-feedback');
+      if (feedback) {
+        feedback.textContent = form.hasAttribute('data-newsletter')
+          ? 'Thank you. Keep an eye on your inbox for stories from the table.'
+          : 'Thank you for reaching out. Your interest means a lot.';
+      }
+      form.reset();
+    });
+  });
+
   const copyButton = document.querySelector('[data-copy-link]');
-  if (copyButton) copyButton.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(location.href);
-      copyButton.textContent = 'Copied';
-      setTimeout(() => copyButton.textContent = 'Copy link', 1600);
-    } catch (_) { copyButton.textContent = 'Copy unavailable'; }
-  });
+  if (copyButton) {
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyButton.textContent = 'Copied';
+      } catch (_) {
+        copyButton.textContent = 'Copy unavailable';
+      }
+      window.setTimeout(() => { copyButton.textContent = 'Copy link'; }, 1600);
+    });
+  }
 })();

@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="#26170f" name="theme-color"/>
-  <meta content="A sample recipe detail page from the Chef Abbys World recipe library." name="description"/>
+  <meta content="Explore a Ghanaian jollof rice recipe in the Chef Abbys World kitchen." name="description"/>
   <title>
    Jollof rice recipe | Chef Abbys World
   </title>
@@ -13,6 +13,8 @@
   <link href="styles.css" rel="stylesheet"/>
   <link href="recipe-detail.css" rel="stylesheet"/>
   <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="patches.css"/>
  </head>
  <body data-page="recipes" id="top">
   <a class="skip-link" href="#main">
@@ -28,10 +30,10 @@
     </span>
     <span class="brand-wordmark">
      <strong>
-      CHEF ABBYS
+      CHEF ABBYS WORLD
      </strong>
      <small>
-      WORLD OF FOOD &amp; CULTURE
+      FOOD · CULTURE · TRAVEL
      </small>
     </span>
    </a>
@@ -55,7 +57,7 @@
      Recipes
     </a>
     <a data-nav-link="casof" href="casof.html">
-     CASOF
+     Food School
     </a>
     <a data-nav-link="journal" href="journal.html">
      The Journal
@@ -66,7 +68,7 @@
     <a class="nav-cta" data-nav-link="work" href="work-with-me.html">
      Work With Me
      <span>
-      &nearrow;
+      <i class="arrow-icon" aria-hidden="true"></i>
      </span>
     </a>
    </nav>
@@ -105,7 +107,7 @@
       </em>
      </h1>
      <p>
-      A familiar pot, a hundred opinions and plenty of stories. This is a sample recipe page for the Chef Abbys World recipe library.
+      A familiar pot, a hundred opinions and plenty of stories. Jollof brings people to the table and keeps the conversation going.
      </p>
      <div class="recipe-meta-large">
       <span>
@@ -131,7 +133,7 @@
       <button class="button button-dark" onclick="window.print()" type="button">
        Print recipe
        <span>
-        &nearrow;
+        <i class="arrow-icon" aria-hidden="true"></i>
        </span>
       </button>
       <button class="button button-light" data-copy-link="" type="button">
@@ -141,9 +143,6 @@
        Save recipe
       </button>
      </div>
-     <small class="content-note">
-      *Illustrative timings only. Confirm the method and measurements with Chef Abbys.
-     </small>
     </div>
    </section>
    <section class="section-pad">
@@ -154,38 +153,35 @@
       </span>
       <h2>
        Every pot has
-       <em>
+       
         its own rhythm.
-       </em>
+       
       </h2>
-      <p>
-       Jollof is a West African rice dish with regional variations and loyal fans. This page is a layout prototype showing how the finished recipe library could combine cultural context with practical cooking instructions.
-      </p>
       <h3>
        Before you begin
       </h3>
       <p>
-       The final version should feature Chef Abbys' own recipe, ingredient quantities, preferred cooking method, substitution notes and a video demonstration. The details below are placeholders, not a publishable recipe.
+       Jollof is a dish of layers. Start with a well-cooked pepper base, give the rice time to absorb the flavour and let the pot rest before serving.
       </p>
       <h3>
-       Method preview
+       From the kitchen
       </h3>
       <ol>
        <li>
-        Prepare the ingredients and blend or chop the base according to the approved recipe.
+        Blend tomatoes, red peppers, onion and chilli into a smooth base. Prepare the aromatics and rinse the rice.
        </li>
        <li>
-        Build the sauce and allow the flavours to cook together.
+        Cook the onion in oil, add tomato paste then stir in the blended pepper mixture. Season and let the sauce reduce until rich.
        </li>
        <li>
-        Add washed rice and the appropriate liquid, then cook using Chef Abbys' preferred technique.
+        Add the rice and stock, stir to coat each grain then cover and cook gently until the rice is tender.
        </li>
        <li>
-        Rest the rice before serving. Add the final garnishes and sides as approved.
+        Rest the pot for a few minutes before fluffing the rice. Serve with your favourite sides and a little extra pepper sauce.
        </li>
       </ol>
       <div class="notice-panel">
-       This demonstration method is intentionally high-level. Do not use it as cooking instructions until the full recipe has been tested and signed off.
+       Jollof is built in layers. The base, the rice and the gentle work of letting everything come together all matter.
       </div>
      </div>
      <aside class="ingredients-panel">
@@ -249,9 +245,6 @@
         </label>
        </li>
       </ul>
-      <p class="content-note">
-       Ingredient list is illustrative. Replace with the approved recipe and exact quantities.
-      </p>
      </aside>
     </div>
    </section>
@@ -264,15 +257,15 @@
        </span>
        <h2>
         More from the
-        <em>
+        
          table.
-        </em>
+        
        </h2>
       </div>
       <a class="text-link" href="recipes.html">
        Browse recipes
        <span>
-        &nearrow;
+        <i class="arrow-icon" aria-hidden="true"></i>
        </span>
       </a>
      </div>
@@ -340,28 +333,19 @@
        </b>
       </span>
       <span class="brand-wordmark">
-       <strong>
-        CHEF ABBYS
-       </strong>
-       <small>
-        WORLD OF FOOD &amp; CULTURE
-       </small>
+       <strong>CHEF ABBYS WORLD</strong>
+       <small>FOOD · CULTURE · TRAVEL</small>
       </span>
      </a>
      <p>
       African food, people and places. Stories told through the things we grow, cook, share and remember.
      </p>
-     <div class="social-links">
-      <a href="https://www.instagram.com/" rel="noopener" target="_blank">
-       Instagram
-      </a>
-      <a href="https://www.tiktok.com/" rel="noopener" target="_blank">
-       TikTok
-      </a>
-      <a href="https://www.youtube.com/" rel="noopener" target="_blank">
-       YouTube
-      </a>
-     </div>
+     <div class="social-links" aria-label="Social media">
+      <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/chefabbys/" rel="noopener" target="_blank"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@chefabbys" rel="noopener" target="_blank"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+      <a aria-label="YouTube" title="YouTube" href="https://www.youtube.com/@chefabbys" rel="noopener" target="_blank"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+      <a aria-label="Snapchat" title="Snapchat" href="https://www.snapchat.com/add/chefabbys" rel="noopener" target="_blank"><i class="fa-brands fa-snapchat" aria-hidden="true"></i></a>
+    </div>
     </div>
     <div class="footer-column">
      <h4>
@@ -385,7 +369,7 @@
       Her work
      </h4>
      <a href="casof.html">
-      CASOF
+      Chef Abbys School of Food
      </a>
      <a href="big-street-feast.html">
       Big Street Feast
@@ -407,7 +391,7 @@
      <a class="text-link text-link-light" href="explore-africa.html">
       Take a look around
       <span>
-       &nearrow;
+       <i class="arrow-icon" aria-hidden="true"></i>
       </span>
      </a>
     </div>
@@ -429,11 +413,23 @@
      </a>
      &middot;
      <a href="#top">
-      Back to top &uarr;
+      Back to top <i class="arrow-icon arrow-up" aria-hidden="true"></i>
      </a>
     </span>
+    <span class="site-credit"><button type="button" data-credit-open>Website by <strong>jvo_web</strong></button></span>
    </div>
   </footer>
+  <div class="credit-drawer" data-credit-drawer aria-hidden="true">
+   <button class="credit-scrim" data-credit-close aria-label="Close contact drawer"></button>
+   <aside class="credit-card" role="dialog" aria-modal="true" aria-labelledby="credit-title">
+    <button class="credit-close" type="button" data-credit-close aria-label="Close">&times;</button>
+    <span class="eyebrow">A little about the maker</span>
+    <h2 id="credit-title">Website by jvo_web</h2>
+    <p>Need a website with a little more character? Let's talk.</p>
+    <a class="credit-contact" href="https://www.snapchat.com/add/jvo_james" target="_blank" rel="noopener"><i class="fa-brands fa-snapchat" aria-hidden="true"></i><span>Snapchat<strong>jvo_james</strong></span><i class="arrow-icon" aria-hidden="true"></i></a>
+    <a class="credit-contact" href="https://wa.me/233594124246" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp<strong>+233 59 412 1246</strong></span><i class="arrow-icon" aria-hidden="true"></i></a>
+   </aside>
+  </div>
   <script src="images.js">
   </script>
   <script src="script.js">

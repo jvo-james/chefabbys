@@ -16,18 +16,18 @@ Then visit `http://localhost:8000`.
 
 - `index.html`  /  homepage and entry point to the ecosystem
 - `about.html`  /  biography, mission, values and milestones
-- `explore-africa.html`  /  regional country browser, map illustration and food stories
-- `country.html`  /  dynamic country notebook preview (opens with `?name=Ghana`, `?name=Benin` and other country names)
+- `explore-africa.html`  /  interactive 54-country Africa atlas, country search and food stories
+- `country.html`  /  dynamic country notebooks (opens with `?name=Ghana`, `?name=Benin` and other country names)
 - `food-journey.html`  /  travel diary and announced West Africa Food Tour itinerary
 - `recipes.html`  /  searchable, filterable recipe library
 - `recipe-detail.html`  /  example recipe detail and serving controls
-- `casof.html`  /  Chef Abbys School of Food concept and interest form
-- `course-detail.html`  /  proposed course detail and interest form
-- `student-dashboard.html`  /  static student dashboard preview
+- `casof.html`  /  Chef Abbys School of Food academy and interest form
+- `course-detail.html`  /  course detail and interest form
+- `student-dashboard.html`  /  student learning space
 - `journal.html`  /  news, food stories, press and events
 - `story.html`  /  editorial article about the announced West Africa Food Tour
 - `big-street-feast.html`  /  community initiative, impact and involvement form
-- `work-with-me.html`  /  partnerships, media kit preview and enquiry form
+- `work-with-me.html`  /  partnerships, media kit and enquiry form
 - `contact.html`  /  contact routing and general enquiry form
 - `studio.html`  /  private-looking CMS/editorial workspace concept for the team
 
@@ -41,13 +41,13 @@ The three supplied moodboard images are preserved in `images/` as `reference-ins
 
 This is a visual and interaction prototype, not a finished production system.
 
-- The Unsplash images are temporary placeholders. Replace them with photographs approved by Chef Abbys and her team.
-- Most forms currently show a frontend success message only. Connect them to a secure backend, inbox or CRM and add spam protection before launch. The Team Studio draft feature stores sample drafts in the browser only.
+- The Unsplash images are temporary editorial photography. Replace them with photographs approved by Chef Abbys and her team.
+- Most forms currently show a frontend success message only. Connect them to a secure backend, inbox or CRM and add spam protection before launch. The Team Studio draft feature stores drafts in the browser only.
 - The newsletter form needs a mailing-list provider.
-- CASOF course names and learning paths are proposed examples. Confirm the real programmes, prices, curriculum and enrolment details before publishing.
-- Recipe photography, ingredient quantities, cooking times and methods are examples. Use Chef Abbys' approved and tested recipes before publishing.
-- The Journal event list is sample editorial content. No future public event date is represented as confirmed in this preview.
-- The Big Street Feast page distinguishes the publicly reported first-edition figure (15,000+) from the 2026 target (50,000+). Confirm final reporting with the organising team before presenting target figures as outcomes.
+- The academy and course pages present a possible learning experience. Confirm real programmes, prices, curriculum and enrolment details with the team before launch.
+- Recipe photography, ingredient quantities, cooking times and methods are editorial examples. Use Chef Abbys' approved and tested recipes before launch.
+- The Journal uses editable editorial entries. Add future public event dates only when they are confirmed by the team.
+- The Big Street Feast page uses public reporting for more than 20,000 people fed at the first edition and more than 50,000 people reached at the 2026 edition. Reconfirm impact figures with the organisers before launch.
 - The West Africa Food Tour page describes the six-country itinerary as announced. It does not claim that every stop has been completed.
 - Confirm the official brand name, biography, social handles, partnerships, audience statistics, rates, contact addresses and management workflow with the team.
 - The Team Studio is a non-secure visual prototype. Production requires authentication, staff roles, audit history, server-side validation and a proper content management backend.
@@ -57,4 +57,4 @@ This is a visual and interaction prototype, not a finished production system.
 
 Public-facing reference points checked on 20 November 2026 include Chef Abbys' TIME100 Creators 2025 recognition and African Food Tourist positioning; the August 2026 announcement of a six-country West Africa Food Tour naming Nigeria, Liberia, Togo, Senegal, Cabo Verde and Côte d'Ivoire; and October 2026 public commentary about Big Street Feast around World Food Day. These are used as editorial context, not as a claim that the website is authorised or officially endorsed by Chef Abbys.
 
-The site is an independent pitch concept. It should be presented as a proposed design, not as an official Chef Abbys property, until the owner or management team approves it.
+The site is an independent pitch concept. Present it as a proposed design, not as an official Chef Abbys property, until the owner or management team approves it.

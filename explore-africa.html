@@ -13,6 +13,8 @@
   <link href="styles.css" rel="stylesheet"/>
   <link href="explore-africa.css" rel="stylesheet"/>
   <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="patches.css"/>
  </head>
  <body data-page="explore" id="top">
   <a class="skip-link" href="#main">
@@ -28,10 +30,10 @@
     </span>
     <span class="brand-wordmark">
      <strong>
-      CHEF ABBYS
+      CHEF ABBYS WORLD
      </strong>
      <small>
-      WORLD OF FOOD &amp; CULTURE
+      FOOD · CULTURE · TRAVEL
      </small>
     </span>
    </a>
@@ -55,7 +57,7 @@
      Recipes
     </a>
     <a data-nav-link="casof" href="casof.html">
-     CASOF
+     Food School
     </a>
     <a data-nav-link="journal" href="journal.html">
      The Journal
@@ -66,7 +68,7 @@
     <a class="nav-cta" data-nav-link="work" href="work-with-me.html">
      Work With Me
      <span>
-      &nearrow;
+      <i class="arrow-icon" aria-hidden="true"></i>
      </span>
     </a>
    </nav>
@@ -88,20 +90,6 @@
       People. Places. Pieces. A growing archive of the foods, customs and everyday stories that make this continent extraordinary.
      </p>
     </div>
-    <div class="inside-mosaic">
-     <div>
-      <img alt="A lively African market" data-image="market"/>
-     </div>
-     <div>
-      <img alt="Portrait in colourful African headwrap" data-image="chefPortrait"/>
-     </div>
-     <div>
-      <img alt="Colourful African textile patterns" data-image="africanPattern"/>
-     </div>
-     <div>
-      <img alt="A spread of traditional food" data-image="foodSpread"/>
-     </div>
-    </div>
    </section>
    <section class="section-pad">
     <div class="wrap">
@@ -113,159 +101,37 @@
        <h2>
         Pick a place.
         <br/>
-        <em>
+        
          Follow the flavour.
-        </em>
+        
        </h2>
       </div>
       <p>
-       Browse all 54 African countries. Start with the dishes already woven into Chef Abbys' public food storytelling, then explore the wider continent as country research is added.
+       Start anywhere on the map. Search for a country, hover over a marker or choose a place to open its food notebook.
       </p>
      </div>
-     <div class="explore-map-layout">
-      <div aria-label="Stylised illustration representing the African continent. It is decorative and not a navigation map." class="region-map" role="img">
-       <svg aria-hidden="true" viewbox="0 0 560 340">
-        <path d="M188 17 248 25 300 12 359 31 392 67 435 89 426 128 453 163 415 201 391 251 355 277 333 321 287 305 259 270 226 251 202 212 166 191 142 153 116 110 143 77 149 44Z" fill="#d8b98e" stroke="#8d674a" stroke-width="3">
-        </path>
-        <path d="m156 104 62 17 46-17 46 19 58-4 37 20m-223 25 72 10 40 31 43-14 56 25m-176 4 36 42 49 17 39 32" fill="none" stroke="#a77b58" stroke-dasharray="5 7" stroke-width="2">
-        </path>
-        <circle cx="228" cy="160" fill="#a84d2d" r="8">
-        </circle>
-        <circle cx="251" cy="182" fill="#e5a04b" r="6">
-        </circle>
-        <circle cx="213" cy="198" fill="#e5a04b" r="6">
-        </circle>
-       </svg>
-       <span class="map-caption">
-        A visual starting point &middot; Not a geographic reference map
-       </span>
-      </div>
-      <div class="explore-intro">
-       <span class="eyebrow">
-        Explore by region
-       </span>
-       <h2>
-        Where should we
-        <em>
-         go next?
-        </em>
-       </h2>
-       <p>
-        Choose a region to browse the country list. Profiles are added as stories are researched and approved.
-       </p>
-       <div aria-live="polite" class="map-note" data-map-note="">
-        Select a country to see its featured dishes and story.
+     <div class="atlas-shell">
+      <div class="atlas-topline"><span>THE AFRICAN FOOD ATLAS</span><span>54 COUNTRIES · ONE CONTINENT</span></div>
+      <div class="atlas-grid">
+       <div class="atlas-map-wrap">
+        <div class="atlas-map" data-atlas-map aria-label="Map of Africa with selectable country markers">
+         <svg class="atlas-land" viewBox="0 0 700 620" role="img" aria-label="Geographic map of Africa with longitude and latitude reference lines" preserveAspectRatio="xMidYMid meet"><defs><pattern id="atlasDots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#b9895e" opacity=".24"/></pattern></defs><g class="atlas-graticule"><path d="M123.5 25 V595"/><path d="M205.9 25 V595"/><path d="M288.2 25 V595"/><path d="M370.6 25 V595"/><path d="M452.9 25 V595"/><path d="M535.3 25 V595"/><path d="M28 67.9 H675"/><path d="M28 152.9 H675"/><path d="M28 237.8 H675"/><path d="M28 322.7 H675"/><path d="M28 407.7 H675"/><path d="M28 492.6 H675"/><path d="M28 577.5 H675"/></g><path class="atlas-continent" d="M89 72 L127 80 L142 104 L119 142 L89 181 L89 205 L96 228 L112 244 L120 259 L142 275 L180 282 L203 282 L218 282 L241 275 L256 282 L279 290 L294 298 L287 323 L309 362 L317 401 L309 455 L324 502 L347 549 L363 588 L386 596 L408 580 L431 557 L462 526 L485 502 L515 455 L538 416 L545 369 L576 346 L599 323 L606 298 L599 267 L584 244 L553 228 L538 213 L523 189 L515 166 L485 142 L469 111 L462 80 L431 72 L393 64 L355 56 L317 41 L279 33 L241 33 L203 41 L157 48 L119 56 Z"/><path class="atlas-texture" d="M89 72 L127 80 L142 104 L119 142 L89 181 L89 205 L96 228 L112 244 L120 259 L142 275 L180 282 L203 282 L218 282 L241 275 L256 282 L279 290 L294 298 L287 323 L309 362 L317 401 L309 455 L324 502 L347 549 L363 588 L386 596 L408 580 L431 557 L462 526 L485 502 L515 455 L538 416 L545 369 L576 346 L599 323 L606 298 L599 267 L584 244 L553 228 L538 213 L523 189 L515 166 L485 142 L469 111 L462 80 L431 72 L393 64 L355 56 L317 41 L279 33 L241 33 L203 41 L157 48 L119 56 Z"/><path class="atlas-island" d="M548 418 L575 414 L598 439 L602 470 L586 505 L564 518 L551 489 L545 454 Z"/><path class="atlas-texture" d="M548 418 L575 414 L598 439 L602 470 L586 505 L564 518 L551 489 L545 454 Z"/></svg>
+         <div class="atlas-markers" data-atlas-markers></div>
+         <div class="map-scale"><span></span> NORTH <b>AFRICA</b></div>
+         <div class="atlas-tip" data-atlas-tip aria-live="polite"><small>START EXPLORING</small><strong>Choose a marker</strong><span>Country notes will appear here.</span></div>
+        </div>
+        <div class="atlas-legend"><span><i class="legend-dot featured"></i> Featured in Chef Abbys' food stories</span><span><i class="legend-dot"></i> Explore the wider continent</span></div>
        </div>
-       <a class="text-link country-map-link" data-country-link="" href="country.html?name=Ghana">
-        Open country notebook
-        <span>
-         &nearrow;
-        </span>
-       </a>
+       <aside class="atlas-aside">
+        <span class="eyebrow">Find your next flavour</span>
+        <h2>Where shall<br/>we <span>go?</span></h2>
+        <p>Look up a country or pick a point on the map. Every notebook starts with a place and the food that brings people together.</p>
+        <label class="atlas-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" data-country-search placeholder="Search any African country" autocomplete="off" aria-label="Search African countries"/><button type="button" data-clear-search aria-label="Clear search">&times;</button></label>
+        <div class="atlas-search-results" data-search-results hidden></div>
+        <div class="atlas-selected" data-atlas-selected><span class="selected-region">WEST AFRICA</span><h3>Ghana</h3><p>Waakye, kenkey and jollof sit among the flavours that travel with Ghanaian food stories.</p><a class="button button-dark" href="country.html?name=Ghana" data-atlas-open>Open Ghana notebook <i class="arrow-icon" aria-hidden="true"></i></a></div>
+        <div class="atlas-aside-foot"><span>54 COUNTRIES</span><span>FOOD · PEOPLE · PLACE</span></div>
+       </aside>
       </div>
-     </div>
-     <div class="country-tabs">
-      <button class="is-active" data-region="west" type="button">
-       West Africa
-      </button>
-      <button data-region="north" type="button">
-       North Africa
-      </button>
-      <button data-region="east" type="button">
-       East Africa
-      </button>
-      <button data-region="central" type="button">
-       Central Africa
-      </button>
-      <button data-region="south" type="button">
-       Southern Africa
-      </button>
-     </div>
-     <div class="country-list">
-      <button class="is-selected" data-country="Ghana" type="button">
-       <span>
-        GH
-       </span>
-       <b>
-        Ghana
-       </b>
-       <small>
-        Waakye &middot; Kenkey &middot; Jollof
-       </small>
-       <i>
-        &nearrow;
-       </i>
-      </button>
-      <button data-country="Benin" type="button">
-       <span>
-        BJ
-       </span>
-       <b>
-        Benin
-       </b>
-       <small>
-        Amiwo and food traditions
-       </small>
-       <i>
-        &nearrow;
-       </i>
-      </button>
-      <button data-country="Burkina Faso" type="button">
-       <span>
-        BF
-       </span>
-       <b>
-        Burkina Faso
-       </b>
-       <small>
-        Babenda and more
-       </small>
-       <i>
-        &nearrow;
-       </i>
-      </button>
-      <button data-country="Togo" type="button">
-       <span>
-        TG
-       </span>
-       <b>
-        Togo
-       </b>
-       <small>
-        Food tour stories
-       </small>
-       <i>
-        &nearrow;
-       </i>
-      </button>
-      <button data-country="Senegal" type="button">
-       <span>
-        SN
-       </span>
-       <b>
-        Senegal
-       </b>
-       <small>
-        Food tour stories
-       </small>
-       <i>
-        &nearrow;
-       </i>
-      </button>
-      <button data-country="Cabo Verde" type="button">
-       <span>
-        CV
-       </span>
-       <b>
-        Cabo Verde
-       </b>
-       <small>
-        Food tour stories
-       </small>
-       <i>
-        &nearrow;
-       </i>
-      </button>
      </div>
     </div>
    </section>
@@ -278,9 +144,9 @@
        </span>
        <h2>
         Stories from the
-        <em>
+        
          table.
-        </em>
+        
        </h2>
       </div>
       <p class="section-intro">
@@ -288,7 +154,7 @@
       </p>
      </div>
      <div class="card-grid">
-      <a class="editorial-card" href="recipes.html">
+      <a class="editorial-card" href="country.html?name=Ghana">
        <div class="card-image">
         <img alt="Ghanaian food and culture" data-image="ghana"/>
        </div>
@@ -305,12 +171,12 @@
         <span class="text-link">
          Explore dishes
          <span>
-          &nearrow;
+          <i class="arrow-icon" aria-hidden="true"></i>
          </span>
         </span>
        </div>
       </a>
-      <a class="editorial-card" href="story.html">
+      <a class="editorial-card" href="country.html?name=Benin">
        <div class="card-image">
         <img alt="A traditional West African meal" data-image="amiwo"/>
        </div>
@@ -327,12 +193,12 @@
         <span class="text-link">
          Read food notes
          <span>
-          &nearrow;
+          <i class="arrow-icon" aria-hidden="true"></i>
          </span>
         </span>
        </div>
       </a>
-      <a class="editorial-card" href="story.html">
+      <a class="editorial-card" href="country.html?name=Burkina%20Faso">
        <div class="card-image">
         <img alt="A green vegetable dish" data-image="babenda"/>
        </div>
@@ -349,7 +215,7 @@
         <span class="text-link">
          Read food notes
          <span>
-          &nearrow;
+          <i class="arrow-icon" aria-hidden="true"></i>
          </span>
         </span>
        </div>
@@ -366,24 +232,24 @@
       </span>
       <h2>
        The West Africa Food Tour
-       <em>
+       
         notebook.
-       </em>
+       
       </h2>
       <p>
-       In August 2026, a six-country West Africa Food Tour was announced, with Nigeria, Liberia, Togo, Senegal, Cabo Verde and C&ocirc;te d&rsquo;Ivoire named among the stops. Follow the Journal for confirmed updates and stories from the journey.
+       The West Africa Food Tour was announced in August 2026, with Nigeria, Liberia, Togo, Senegal, Cabo Verde and Côte d’Ivoire named among its stops. It is one more way of taking African food stories across borders.
       </p>
       <div class="hero-actions">
        <a class="button button-light" href="story.html">
         Read the tour announcement
         <span>
-         &nearrow;
+         <i class="arrow-icon" aria-hidden="true"></i>
         </span>
        </a>
        <a class="text-link text-link-light" href="food-journey.html">
         Follow my food journey
         <span>
-         &nearrow;
+         <i class="arrow-icon" aria-hidden="true"></i>
         </span>
        </a>
       </div>
@@ -402,28 +268,19 @@
        </b>
       </span>
       <span class="brand-wordmark">
-       <strong>
-        CHEF ABBYS
-       </strong>
-       <small>
-        WORLD OF FOOD &amp; CULTURE
-       </small>
+       <strong>CHEF ABBYS WORLD</strong>
+       <small>FOOD · CULTURE · TRAVEL</small>
       </span>
      </a>
      <p>
       African food, people and places. Stories told through the things we grow, cook, share and remember.
      </p>
-     <div class="social-links">
-      <a href="https://www.instagram.com/" rel="noopener" target="_blank">
-       Instagram
-      </a>
-      <a href="https://www.tiktok.com/" rel="noopener" target="_blank">
-       TikTok
-      </a>
-      <a href="https://www.youtube.com/" rel="noopener" target="_blank">
-       YouTube
-      </a>
-     </div>
+     <div class="social-links" aria-label="Social media">
+      <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/chefabbys/" rel="noopener" target="_blank"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@chefabbys" rel="noopener" target="_blank"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+      <a aria-label="YouTube" title="YouTube" href="https://www.youtube.com/@chefabbys" rel="noopener" target="_blank"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+      <a aria-label="Snapchat" title="Snapchat" href="https://www.snapchat.com/add/chefabbys" rel="noopener" target="_blank"><i class="fa-brands fa-snapchat" aria-hidden="true"></i></a>
+    </div>
     </div>
     <div class="footer-column">
      <h4>
@@ -447,7 +304,7 @@
       Her work
      </h4>
      <a href="casof.html">
-      CASOF
+      Chef Abbys School of Food
      </a>
      <a href="big-street-feast.html">
       Big Street Feast
@@ -469,7 +326,7 @@
      <a class="text-link text-link-light" href="explore-africa.html">
       Take a look around
       <span>
-       &nearrow;
+       <i class="arrow-icon" aria-hidden="true"></i>
       </span>
      </a>
     </div>
@@ -491,11 +348,23 @@
      </a>
      &middot;
      <a href="#top">
-      Back to top &uarr;
+      Back to top <i class="arrow-icon arrow-up" aria-hidden="true"></i>
      </a>
     </span>
+    <span class="site-credit"><button type="button" data-credit-open>Website by <strong>jvo_web</strong></button></span>
    </div>
   </footer>
+  <div class="credit-drawer" data-credit-drawer aria-hidden="true">
+   <button class="credit-scrim" data-credit-close aria-label="Close contact drawer"></button>
+   <aside class="credit-card" role="dialog" aria-modal="true" aria-labelledby="credit-title">
+    <button class="credit-close" type="button" data-credit-close aria-label="Close">&times;</button>
+    <span class="eyebrow">A little about the maker</span>
+    <h2 id="credit-title">Website by jvo_web</h2>
+    <p>Need a website with a little more character? Let's talk.</p>
+    <a class="credit-contact" href="https://www.snapchat.com/add/jvo_james" target="_blank" rel="noopener"><i class="fa-brands fa-snapchat" aria-hidden="true"></i><span>Snapchat<strong>jvo_james</strong></span><i class="arrow-icon" aria-hidden="true"></i></a>
+    <a class="credit-contact" href="https://wa.me/233594124246" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp<strong>+233 59 412 1246</strong></span><i class="arrow-icon" aria-hidden="true"></i></a>
+   </aside>
+  </div>
   <script src="images.js">
   </script>
   <script src="script.js">

@@ -1,7 +1,10 @@
 /* Central image library. Replace any URL with images/your-file.jpg. Keep key names unchanged. */
 window.CHEF_ABBYS_IMAGES = {
   homeHero: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=2200&q=88",
-  chefPortrait: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85",
+  chefPortrait: "https://static.time.com/v3/assets/bltea6093859af6183b/blt4f18875fd147f94e/6998c81e25f3ee0ab4644cfe/TIME100-Creators-2025-Abena-Amoakoaa-Sintim-Aboagye-Chef-Abbys-079.jpg?auto=webp&quality=85&width=1800",
+  timePortrait: "https://static.time.com/v3/assets/bltea6093859af6183b/blt4f18875fd147f94e/6998c81e25f3ee0ab4644cfe/TIME100-Creators-2025-Abena-Amoakoaa-Sintim-Aboagye-Chef-Abbys-079.jpg?auto=webp&quality=85&width=1800",
+  socialFest: "https://static.wixstatic.com/media/ba8d70_046590155522460693701e107f284fa4~mv2.png/v1/fill/w_1400,h_1200,al_c,q_90/Screenshot%202026-06-10%20at%209_21_06%E2%80%AFAM.png",
+  snapchatKitchen: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1500&q=85",
   chefCooking: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=85",
   market: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85",
   jollof: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1100&q=85",

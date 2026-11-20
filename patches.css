@@ -1,0 +1,449 @@
+/* CHEF ABBYS WORLD - responsive editorial refinements */
+:root{--header-height:82px;--soft-shadow:0 18px 55px rgba(39,23,15,.11)}
+html{scroll-padding-top:calc(var(--header-height) + 18px)}
+body:not([data-page="home"]){padding-top:var(--header-height)}
+
+/* A discreet, direction-aware masthead */
+.site-header{height:var(--header-height);position:fixed;inset:0 0 auto;z-index:1000;background:rgba(251,248,241,.98);border-bottom:1px solid rgba(39,23,15,.08);box-shadow:0 3px 24px rgba(39,23,15,.045);transition:transform .28s cubic-bezier(.22,.61,.36,1),background .25s ease,box-shadow .25s ease,border-color .25s ease;will-change:transform}
+.site-header.is-hidden{transform:translateY(-105%)}
+.site-header.is-scrolled{background:rgba(251,248,241,.98);box-shadow:0 8px 28px rgba(39,23,15,.09);border-color:rgba(39,23,15,.1)}
+body[data-page="home"] .site-header{background:linear-gradient(180deg,rgba(25,14,9,.48),rgba(25,14,9,.08));border-color:transparent;box-shadow:none;color:#fff}
+body[data-page="home"] .site-header .brand-wordmark strong,body[data-page="home"] .site-header .main-nav>a:not(.nav-cta){color:#fff}
+body[data-page="home"] .site-header .brand-wordmark small{color:#e7d5c4}
+body[data-page="home"] .site-header .nav-toggle span{background:#fff}
+body[data-page="home"] .site-header.is-scrolled{background:rgba(251,248,241,.98);border-color:rgba(39,23,15,.1);box-shadow:0 8px 28px rgba(39,23,15,.09);color:var(--ink)}
+body[data-page="home"] .site-header.is-scrolled .brand-wordmark strong,body[data-page="home"] .site-header.is-scrolled .main-nav>a:not(.nav-cta){color:var(--ink)}
+body[data-page="home"] .site-header.is-scrolled .brand-wordmark small{color:#8d7967}
+body[data-page="home"] .site-header.is-scrolled .nav-toggle span{background:var(--ink)}
+body[data-page="home"] .home-hero{min-height:100svh;padding-top:var(--header-height)}
+body[data-page="home"] .hero-inner{min-height:calc(100svh - var(--header-height));padding-top:clamp(80px,11vh,150px);padding-bottom:110px}
+.nav-toggle{width:38px;height:38px;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;padding:4px;gap:6px}
+.nav-toggle span{width:25px;height:1.5px}
+.nav-toggle:focus-visible{outline:1px solid currentColor;outline-offset:5px}
+.nav-toggle[aria-expanded=true] span:first-child{transform:translateY(3.75px) rotate(45deg)}
+.nav-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.75px) rotate(-45deg)}
+.main-nav{transition:opacity .2s ease}
+
+/* Arrows are drawn with CSS so they render consistently on phones. */
+.arrow-icon{display:inline-block;width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);vertical-align:middle;flex:0 0 auto;margin-inline:2px}
+.arrow-icon.arrow-down{transform:rotate(135deg)}
+.button .arrow-icon,.text-link .arrow-icon,.hero-text-link .arrow-icon{margin-left:4px}
+.card-arrow{font-size:0!important}
+.card-arrow:after{content:"";display:block;width:12px;height:12px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+
+/* Homepage welcome flourish */
+.akwaaba-mark{position:relative;display:inline-flex;align-self:flex-start;align-items:center;gap:10px;margin-top:clamp(50px,7vw,105px);color:var(--rust);font:italic clamp(33px,3.6vw,48px)/1 var(--serif);letter-spacing:-.05em;transform:rotate(-9deg);opacity:0;animation:akwaabaArrive .95s .25s cubic-bezier(.2,.8,.2,1) forwards}
+.akwaaba-mark:before{content:"";position:absolute;left:-10px;right:-15px;bottom:-8px;height:10px;border-bottom:1.5px solid var(--orange);border-radius:50%;transform:scaleX(0);transform-origin:left;animation:akwaabaUnderline .85s 1s ease forwards}
+.akwaaba-mark:after{content:"";position:absolute;right:-17px;top:-7px;width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:7px 8px 0 -2px var(--rust);opacity:0;animation:akwaabaDot .4s 1.25s ease forwards}
+.akwaaba-mark i{display:none}
+@keyframes akwaabaArrive{from{opacity:0;transform:translateY(12px) rotate(-14deg)}to{opacity:1;transform:translateY(0) rotate(-9deg)}}
+@keyframes akwaabaUnderline{to{transform:scaleX(1)}}
+@keyframes akwaabaDot{to{opacity:1}}
+
+/* Inside Africa: one composed frame on desktop, a deliberate collage on mobile */
+.home-africa-section{height:100svh;min-height:650px;padding:28px clamp(18px,3.5vw,52px);display:flex;align-items:stretch;background:#eee3d2;overflow:hidden}
+.africa-panel{width:min(100%,1480px);height:100%;min-height:0;margin:auto;grid-template-columns:minmax(330px,.83fr) minmax(0,1.17fr);box-shadow:0 24px 60px rgba(38,23,15,.16)}
+.africa-panel-copy{min-height:0;padding:clamp(30px,4vw,64px);justify-content:center}
+.africa-panel-copy h2{font-size:clamp(66px,8.1vw,116px);margin:clamp(24px,4vh,48px) 0 0;line-height:.78}
+.africa-kicker{margin:clamp(12px,2vh,22px) 0;font-size:clamp(10px,1vw,13px)}
+.africa-panel-text{font-size:clamp(14px,1.2vw,17px);max-width:340px;margin:clamp(14px,2.2vh,25px) 0}
+.africa-panel-index{margin-top:auto;padding-top:20px;font:700 8px var(--display);letter-spacing:.14em;color:#b69b82}
+.africa-collage{height:100%;min-height:0;padding:9px;gap:9px;grid-template-columns:1.02fr .98fr;grid-template-rows:1fr .82fr 34px;background:#f8f3e9}
+.africa-collage .collage-tile{position:relative;overflow:hidden;min-width:0;min-height:0;background:#d8c3a9}
+.africa-collage .collage-tile:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(20,12,8,.52));pointer-events:none}
+.africa-collage .collage-tile img{width:100%;height:100%;object-fit:cover;transition:transform .75s cubic-bezier(.2,.7,.2,1);filter:saturate(.88)}
+.africa-collage .collage-tile:hover img{transform:scale(1.045)}
+.africa-collage .collage-tile span{position:absolute;z-index:1;left:14px;bottom:12px;color:#fff;font:700 8px var(--display);letter-spacing:.16em;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.tile-market{grid-column:1;grid-row:1}.tile-portrait{grid-column:2;grid-row:1/3}.tile-food{grid-column:1;grid-row:2}.tile-pattern{display:none}
+.collage-caption{grid-column:1/-1;grid-row:3;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:3px 10px;font:700 8px var(--display);font-style:normal;letter-spacing:.13em;color:#685442}
+
+/* Magazine feature, designed as an editorial spread rather than a dark text strip */
+.home-quote-section.magazine-feature{min-height:0;padding:clamp(66px,8vw,112px) 0;background:#eee2cf;color:var(--ink);overflow:hidden;isolation:isolate}
+.magazine-feature:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.22) 0 49.7%,rgba(88,52,30,.09) 50%,rgba(255,255,255,.1) 50.3%),repeating-linear-gradient(0deg,transparent 0 5px,rgba(85,57,37,.022) 6px 7px);z-index:-1}
+.magazine-grain{position:absolute;inset:0;opacity:.26;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");pointer-events:none;z-index:-1}
+.magazine-ghost{position:absolute;right:-1vw;top:2%;font:800 clamp(220px,36vw,560px)/.8 var(--display);letter-spacing:-.13em;color:rgba(113,67,39,.055);pointer-events:none;z-index:-1}
+.magazine-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(290px,.75fr);align-items:center;gap:clamp(36px,8vw,120px);position:relative}
+.magazine-quote{max-width:700px;padding:clamp(10px,2vw,30px) 0}
+.magazine-quote .eyebrow{color:#8b4b2f}
+.magazine-quote .quote-mark{display:block;font:400 100px/.65 var(--serif);color:#b5683d;margin:42px 0 14px}
+.magazine-quote blockquote{font:400 clamp(30px,4.2vw,58px)/1.12 var(--serif);letter-spacing:-.025em;margin:0;max-width:760px;color:#2b1a11;text-wrap:balance}
+.quote-credit{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap;margin-top:30px;color:#75442d;font:800 9px var(--display);letter-spacing:.16em}
+.quote-credit span+span{border-left:1px solid rgba(67,42,28,.35);padding-left:16px;color:#805f4c}
+.magazine-read{display:inline-flex;align-items:center;gap:16px;margin-top:30px;padding-bottom:8px;border-bottom:1px solid #a75c37;font:800 9px var(--display);letter-spacing:.14em;text-transform:uppercase;color:#673d29}
+.magazine-cover-link{display:block;width:min(100%,390px);justify-self:center;transform:rotate(2.2deg);transition:transform .4s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 26px 24px rgba(45,27,16,.23))}
+.magazine-cover-link:hover{transform:rotate(0) translateY(-7px)}
+.magazine-cover{aspect-ratio:3/4.08;background:#f9f4ea;border:1px solid rgba(55,34,20,.22);padding:11px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.magazine-masthead{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid #26170f;padding:0 2px 8px;color:#21150e;font-family:var(--display);line-height:1}
+.magazine-masthead span{font-size:clamp(8px,1vw,12px);font-weight:800;letter-spacing:.2em}.magazine-masthead strong{font:800 clamp(20px,3.3vw,42px)/.9 var(--display);letter-spacing:-.09em}
+.magazine-cover-photo{height:48%;min-height:0;overflow:hidden;margin-top:9px;background:#ded0b8}
+.magazine-cover-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.magazine-cover-text{position:relative;display:flex;flex-direction:column;gap:5px;padding:13px 4px 5px;color:#21150e}
+.magazine-cover-text>span{font:800 7px var(--display);letter-spacing:.19em;color:#94512f}
+.magazine-cover-text>strong{font:800 clamp(32px,5.5vw,68px)/.76 var(--display);letter-spacing:-.095em}
+.magazine-cover-text>b{font:800 clamp(9px,1.3vw,15px)/1.12 var(--display);letter-spacing:.04em;max-width:190px;color:#8b492c}
+.magazine-cover-text>small{font:800 7px var(--display);letter-spacing:.18em;margin-top:3px}
+.cover-seal{position:absolute;right:13px;bottom:15px;width:60px;height:60px;border:1px solid #a75734;border-radius:50%;display:grid;place-items:center;text-align:center;font:800 7px/1.2 var(--display);letter-spacing:.1em;color:#9c4e2c;transform:rotate(9deg)}
+.magazine-caption{display:block;margin-top:17px;text-align:center;color:#806752;font:700 8px var(--display);letter-spacing:.13em;text-transform:uppercase}
+
+/* Latest dispatches: one clear feature and a separate stack of clickable stories */
+.journal-home-grid{grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:clamp(28px,5vw,66px);align-items:start}
+.journal-lead,.journal-lead-link{display:block;min-width:0}
+.journal-lead-link{padding-bottom:4px}
+.journal-lead-image{height:clamp(260px,34vw,440px);position:relative;display:block;overflow:hidden;background:var(--sand)}
+.journal-lead-image img{width:100%;height:100%;object-fit:cover;transition:transform .65s}
+.journal-lead-link:hover .journal-lead-image img{transform:scale(1.035)}
+.lead-image-label{position:absolute;left:17px;bottom:17px;background:var(--paper);padding:9px 12px;color:var(--ink);font:800 8px var(--display);letter-spacing:.14em}
+.journal-lead-link .journal-meta{display:flex;justify-content:space-between;gap:15px;margin:18px 0 12px}
+.journal-lead-link h3{font:400 clamp(30px,3.3vw,46px)/1.06 var(--serif);letter-spacing:-.025em;margin:0 0 12px;max-width:690px}
+.journal-lead-link p{max-width:620px;color:var(--muted);margin:0 0 20px;font-size:13px}
+.journal-lead-link .text-link{display:inline-flex}
+.journal-side{display:flex;flex-direction:column;gap:0;min-width:0}
+.journal-small{display:grid;grid-template-columns:minmax(100px,130px) minmax(0,1fr);gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);min-width:0;transition:background .2s,padding .2s}
+.journal-small:first-child{padding-top:0}
+.journal-small img{display:block;width:100%;height:104px;object-fit:cover;transition:transform .4s}
+.journal-small:hover img{transform:scale(1.03)}
+.journal-small>div{min-width:0}
+.journal-small .journal-meta{display:block;margin:0 0 7px;line-height:1.5}
+.journal-small h4{font:400 clamp(18px,1.65vw,22px)/1.13 var(--serif);margin:0 0 10px}
+.journal-small .small-read{display:inline-flex;align-items:center;gap:10px;color:#8e4d31;font:800 8px var(--display);letter-spacing:.1em;text-transform:uppercase}
+.journal-small .small-read .arrow-icon{width:7px;height:7px}
+.event-nudge{margin-top:18px;padding:21px 23px;background:#eee3d2;border-left:2px solid var(--orange)}
+
+/* Four principles on the About page */
+body[data-page="about"] .card-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+body[data-page="about"] .card-grid .card-image{height:clamp(150px,16vw,220px)}
+body[data-page="about"] .card-grid h3{font-size:clamp(20px,2vw,26px)}
+
+/* Short page openings for About, Journal, Contact and archive notebooks */
+.about-page-intro{padding-block:clamp(44px,7vw,88px) 55px;background:#eee4d6}
+.about-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.72fr);gap:clamp(35px,9vw,125px);align-items:center}
+.about-intro-copy h1,.journal-page-intro h1,.contact-page-intro h1,.recipe-page-intro h1{font:400 clamp(48px,7.4vw,92px)/.95 var(--serif);letter-spacing:-.055em;margin:22px 0;color:var(--ink)}
+.about-intro-copy h1 span,.journal-page-intro h1 span,.contact-page-intro h1 span,.recipe-page-intro h1 span{color:var(--rust);font-style:normal;display:inline-block;position:relative}
+.about-intro-copy h1 span:after{content:"";position:absolute;left:3%;right:-5%;bottom:-7px;border-bottom:2px solid var(--orange);transform:rotate(-2deg)}
+.about-intro-copy p,.journal-page-intro p,.contact-page-intro p,.recipe-page-intro p{font:400 clamp(16px,1.55vw,20px)/1.58 var(--serif);color:#645347;max-width:600px;margin:0 0 27px}
+.about-intro-photo{margin:0;position:relative;max-width:430px;justify-self:end;width:100%;transform:rotate(1.5deg)}
+.about-intro-photo:before{content:"";position:absolute;inset:13px -13px -13px 13px;border:1px solid #c78a51}
+.about-intro-photo img{position:relative;height:clamp(280px,34vw,440px);object-position:center 20%;box-shadow:var(--soft-shadow)}
+.about-intro-photo figcaption{position:relative;padding-top:13px;text-align:right;font:800 8px var(--display);letter-spacing:.15em;color:#80634e}
+.about-page-intro+.section-pad{padding-top:clamp(56px,7vw,95px)}
+.journal-page-intro,.contact-page-intro,.recipe-page-intro{padding:clamp(46px,6.6vw,82px) 0 15px;background:var(--paper)}
+.journal-page-intro h1,.contact-page-intro h1,.recipe-page-intro h1{margin:16px 0}
+.journal-page-intro .wrap,.contact-page-intro .wrap,.recipe-page-intro .wrap{max-width:var(--max)}
+.contact-page-intro{padding-bottom:5px}
+.country-page-intro{background:#eee3d2;padding:clamp(38px,5vw,68px) 0}
+.country-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.75fr);align-items:center;gap:clamp(28px,8vw,100px)}
+.country-intro-grid h1{font:400 clamp(48px,7vw,86px)/.95 var(--serif);letter-spacing:-.05em;margin:17px 0 12px}
+.country-intro-grid p{max-width:470px;color:#64564a;font:400 18px/1.5 var(--serif);margin:0 0 21px}
+.country-intro-grid>img{height:clamp(190px,24vw,300px);max-width:450px;justify-self:end;box-shadow:var(--soft-shadow)}
+.breadcrumbs{padding-top:22px;font-size:10px;color:var(--muted)}
+.recipe-page-intro{padding-bottom:25px}
+.recipe-detail-hero{min-height:0;grid-template-columns:minmax(0,.78fr) minmax(0,1.1fr);gap:clamp(25px,5vw,75px);align-items:center;padding:clamp(30px,5vw,65px) var(--gutter);background:#f0e7da}
+.recipe-detail-image{min-height:0;height:clamp(260px,34vw,440px);max-width:560px;justify-self:end;width:100%}
+.recipe-detail-heading{padding:0;max-width:620px}
+.recipe-detail-heading h1{font-size:clamp(42px,5.3vw,70px)}
+
+/* Every form gets the same quiet, tactile treatment */
+.form-panel,.contact-form,.partnership-form,.interest-form,.involved-form{background:#f0e7da;padding:clamp(22px,4vw,42px);border:1px solid rgba(75,48,29,.11);box-shadow:0 18px 55px rgba(38,23,15,.055)}
+.form-panel{border:0;box-shadow:none}
+.form-grid{gap:18px 16px}
+.form-grid label,.interest-form>label,.contact-form>label,.partnership-form>label,.involved-form>label{display:flex;flex-direction:column;gap:8px;color:#5c4738;font:800 9px/1.3 var(--display);letter-spacing:.11em;text-transform:uppercase}
+.form-grid input,.form-grid select,.form-grid textarea,.interest-form input,.interest-form select,.interest-form textarea,.contact-form input,.contact-form select,.contact-form textarea,.partnership-form input,.partnership-form select,.partnership-form textarea,.involved-form input,.involved-form select,.involved-form textarea,.newsletter-form input{width:100%;min-width:0;min-height:51px;border:1px solid rgba(65,43,28,.17);border-radius:0;background:rgba(255,252,247,.86);padding:13px 15px;color:var(--ink);outline:none;box-shadow:inset 0 1px 2px rgba(35,20,10,.025);transition:border-color .2s,box-shadow .2s,background .2s}
+.form-grid textarea,.interest-form textarea,.contact-form textarea,.partnership-form textarea,.involved-form textarea{min-height:126px;resize:vertical;line-height:1.55}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus,.interest-form input:focus,.interest-form select:focus,.interest-form textarea:focus,.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus,.partnership-form input:focus,.partnership-form select:focus,.partnership-form textarea:focus,.involved-form input:focus,.involved-form select:focus,.involved-form textarea:focus{border-color:#a85a36;box-shadow:0 0 0 3px rgba(168,90,54,.1);background:#fff}
+.form-grid input::placeholder,.form-grid textarea::placeholder,.contact-form input::placeholder,.contact-form textarea::placeholder,.partnership-form input::placeholder,.partnership-form textarea::placeholder,.involved-form input::placeholder,.involved-form textarea::placeholder{color:#a89a8c;font:400 13px var(--serif);letter-spacing:0;text-transform:none}
+.interest-form .form-grid,.contact-form .form-grid,.partnership-form .form-grid,.involved-form .form-grid{margin-bottom:22px}
+.interest-form>label,.contact-form>label,.partnership-form>label,.involved-form>label{margin-bottom:17px}
+.form-feedback{min-height:20px;margin:12px 0 0;color:#68452f;font-size:12px}
+.form-panel h2{max-width:560px}
+
+/* Footer socials and the jvo_web contact drawer */
+.social-links{display:flex;align-items:center;gap:10px}
+.social-links a{width:37px;height:37px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.24);border-radius:50%;padding:0;font-size:15px;color:#f1e2d1;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.social-links a:hover{background:var(--orange);color:var(--ink);border-color:var(--orange);transform:translateY(-3px)}
+.site-credit button{border:0;background:transparent;padding:0;color:#d9caba;font:700 9px var(--display);letter-spacing:.06em;cursor:pointer}
+.site-credit button strong{color:#fff;text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px}
+.credit-drawer{position:fixed;inset:0;z-index:2000;display:flex;justify-content:flex-end;visibility:hidden;pointer-events:none}
+.credit-drawer.is-open{visibility:visible;pointer-events:auto}
+.credit-scrim{position:absolute;inset:0;border:0;background:rgba(22,13,8,.52);opacity:0;transition:opacity .25s}
+.credit-drawer.is-open .credit-scrim{opacity:1}
+.credit-card{position:relative;z-index:1;width:min(100%,430px);height:100%;padding:clamp(28px,5vw,48px);background:#f8f1e6;box-shadow:-20px 0 60px rgba(0,0,0,.2);transform:translateX(102%);transition:transform .35s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;justify-content:center}
+.credit-drawer.is-open .credit-card{transform:translateX(0)}
+.credit-close{position:absolute;right:24px;top:22px;width:40px;height:40px;border:1px solid var(--line);background:transparent;font-size:23px;color:var(--ink)}
+.credit-card h2{font:400 clamp(37px,6vw,55px)/1.05 var(--serif);margin:18px 0}
+.credit-card h2 em{font-style:normal;color:var(--rust)}
+.credit-card>p{color:var(--muted);margin:0 0 25px}
+.credit-contact{display:grid;grid-template-columns:35px 1fr 14px;align-items:center;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.credit-contact>i:first-child{font-size:21px;color:var(--rust)}
+.credit-contact span{font:700 9px var(--display);letter-spacing:.12em;text-transform:uppercase;color:#7e6a59}
+.credit-contact strong{display:block;margin-top:5px;font:400 20px var(--serif);letter-spacing:0;text-transform:none;color:var(--ink)}
+
+/* The continent atlas */
+.atlas-shell{background:#f1e7d8;border:1px solid rgba(70,43,25,.13);box-shadow:var(--soft-shadow);overflow:hidden}
+.atlas-topline{display:flex;justify-content:space-between;gap:12px;padding:17px 22px;border-bottom:1px solid rgba(70,43,25,.14);font:800 8px var(--display);letter-spacing:.16em;color:#7a6049}
+.atlas-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.72fr);min-height:570px}
+.atlas-map-wrap{min-width:0;padding:clamp(12px,2.2vw,28px);background:#e8ddca;border-right:1px solid rgba(70,43,25,.13)}
+.atlas-map{position:relative;width:100%;aspect-ratio:700/620;max-height:660px;min-height:430px;overflow:hidden;background:radial-gradient(ellipse at 47% 48%,#f4ebdd 0,#eadcc7 66%,#e2d2bb 100%)}
+.atlas-land{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.atlas-continent{fill:#d2b28c;stroke:#9f7957;stroke-width:2.4;stroke-linejoin:round}
+.atlas-texture{fill:url(#atlasDots);pointer-events:none}
+.atlas-markers{position:absolute;inset:0}
+.atlas-marker{position:absolute;z-index:2;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border:1.5px solid #f7efe3;border-radius:50%;background:#8e6045;padding:0;box-shadow:0 0 0 1px rgba(67,43,26,.33);cursor:pointer;transition:transform .16s,background .16s,box-shadow .16s}
+.atlas-marker.is-featured{width:12px;height:12px;margin:-6px 0 0 -6px;background:#a84d2d;box-shadow:0 0 0 3px rgba(168,77,45,.16),0 0 0 1px #fff}
+.atlas-marker:hover,.atlas-marker:focus-visible,.atlas-marker.is-active{z-index:5;transform:scale(1.55);background:#e5a04b;outline:none;box-shadow:0 0 0 4px rgba(229,160,75,.28),0 0 0 1px #fff}
+.map-scale{position:absolute;left:14px;top:14px;color:#81684e;font:800 7px var(--display);letter-spacing:.14em;writing-mode:vertical-rl;display:flex;align-items:center;gap:7px}
+.map-scale span{display:block;width:1px;height:35px;background:#b88a5f}
+.atlas-tip{position:absolute;left:18px;bottom:18px;width:min(235px,48%);padding:12px 15px;background:rgba(251,247,239,.95);border:1px solid rgba(74,47,28,.16);box-shadow:0 7px 20px rgba(38,23,15,.1);pointer-events:none;display:flex;flex-direction:column;gap:3px}
+.atlas-tip small{font:800 7px var(--display);letter-spacing:.15em;color:#a35a36}
+.atlas-tip strong{font:400 20px var(--serif);line-height:1.1}
+.atlas-tip span{font-size:9px;color:#806e5c;line-height:1.35}
+.atlas-legend{display:flex;flex-wrap:wrap;gap:14px 22px;padding:13px 3px 0;color:#76624f;font:700 8px var(--display);letter-spacing:.04em}
+.atlas-legend>span{display:flex;align-items:center;gap:7px}
+.legend-dot{width:8px;height:8px;display:inline-block;border-radius:50%;background:#8e6045;box-shadow:0 0 0 1px #f8efe2}
+.legend-dot.featured{background:#a84d2d;box-shadow:0 0 0 2px rgba(168,77,45,.18)}
+.atlas-aside{padding:clamp(25px,3.4vw,46px);display:flex;flex-direction:column;align-items:flex-start;background:#fbf8f1;min-width:0}
+.atlas-aside h2{font:400 clamp(38px,4.6vw,59px)/.94 var(--serif);letter-spacing:-.04em;margin:18px 0}
+.atlas-aside h2 span{color:var(--rust);font-style:normal}
+.atlas-aside>p{font-size:12px;color:#786b5d;line-height:1.65;margin:0 0 22px;max-width:340px}
+.atlas-search{display:flex;align-items:center;gap:10px;width:100%;min-height:51px;border-bottom:1px solid #8d6044;background:#f1e7d8;padding:0 12px}
+.atlas-search>i{color:#985333;font-size:13px}
+.atlas-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;padding:13px 0;color:var(--ink);font-size:12px}
+.atlas-search input::placeholder{color:#927f6c}
+.atlas-search button{border:0;background:transparent;font-size:20px;color:#80654e;padding:3px 4px}
+.atlas-search-results{width:100%;max-height:225px;overflow:auto;background:#fffdfa;border:1px solid rgba(76,49,31,.14);border-top:0;box-shadow:0 10px 22px rgba(38,23,15,.07)}
+.atlas-search-results[hidden]{display:none}
+.atlas-result{width:100%;display:grid;grid-template-columns:1fr auto 10px;gap:12px;align-items:center;padding:11px 13px;border:0;border-bottom:1px solid rgba(76,49,31,.08);background:transparent;text-align:left;color:var(--ink)}
+.atlas-result:hover,.atlas-result:focus-visible{background:#f3e7d6;outline:none}
+.atlas-result span{font:400 17px var(--serif)}
+.atlas-result small{font:800 7px var(--display);letter-spacing:.1em;text-transform:uppercase;color:#a15b37}
+.atlas-result .arrow-icon{width:7px;height:7px}
+.atlas-no-results{padding:12px;margin:0;color:#806b58;font-size:11px}
+.atlas-selected{width:100%;margin-top:26px;padding:19px 18px;background:#eee3d2;border-left:2px solid #c77b4a}
+.selected-region{font:800 7px var(--display);letter-spacing:.15em;color:#9a5737}
+.atlas-selected h3{font:400 27px/1.08 var(--serif);margin:8px 0}
+.atlas-selected p{color:#725f4e;font-size:11px;line-height:1.55;margin:0 0 17px}
+.atlas-selected .button{min-height:44px;max-width:100%;padding:0 14px;gap:12px;font-size:9px}
+.atlas-aside-foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;width:100%;margin-top:auto;padding-top:24px;color:#a48a70;font:800 7px var(--display);letter-spacing:.15em}
+
+/* Responsive refinement */
+@media(max-width:1100px){
+ .main-nav{gap:13px}.main-nav>a{font-size:8px}.main-nav .nav-cta{padding:13px 12px;gap:9px}
+ .home-africa-section{padding-inline:18px}.africa-panel{grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr)}
+ .africa-panel-copy{padding:34px}.africa-panel-copy h2{font-size:clamp(65px,8vw,94px)}
+ .journal-home-grid{gap:30px}.journal-small{grid-template-columns:105px 1fr;gap:13px}
+}
+@media(max-width:900px){
+ :root{--header-height:72px}
+ .site-header{height:var(--header-height)}
+ body:not([data-page="home"]){padding-top:var(--header-height)}
+ .nav-toggle{display:flex}
+ .main-nav{position:fixed;top:var(--header-height);left:0;right:0;bottom:0;z-index:1001;background:#f8f2e8;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:18px var(--gutter) 40px;overflow:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s,visibility .22s,transform .22s;box-shadow:0 22px 30px rgba(30,17,9,.12)}
+ .main-nav.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+ .main-nav>a,.main-nav>a:not(.nav-cta){font-size:12px;letter-spacing:.12em;color:var(--ink)!important;padding:19px 0;border-bottom:1px solid rgba(50,30,18,.12)}
+ .main-nav>a:not(.nav-cta):after{display:none}
+ .main-nav .nav-cta{margin-top:22px;justify-content:space-between;padding:17px 18px;font-size:11px;color:var(--cream)!important}
+ body[data-page="home"] .site-header .main-nav>a:not(.nav-cta){color:var(--ink)!important}
+ body[data-page="home"] .site-header.is-scrolled .main-nav>a:not(.nav-cta){color:var(--ink)!important}
+ .home-africa-section{height:auto;min-height:0;padding:26px 20px}
+ .africa-panel{grid-template-columns:1fr;height:auto;min-height:0;max-width:720px}
+ .africa-panel-copy{min-height:0;padding:clamp(28px,6vw,48px);}
+ .africa-panel-copy h2{font-size:clamp(70px,13vw,108px);margin:24px 0 0}
+ .africa-kicker{margin:16px 0 10px}
+ .africa-panel-text{max-width:520px;margin:17px 0 20px}
+ .africa-panel-index{margin-top:27px}
+ .africa-collage{height:auto;min-height:0;aspect-ratio:1.24;grid-template-rows:1fr .72fr 32px}
+ .tile-pattern{display:block;grid-column:1;grid-row:2}
+ .tile-food{grid-column:1;grid-row:2}
+ .tile-portrait{grid-column:2;grid-row:1/3}
+ .magazine-layout{grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:30px}
+ .magazine-cover-link{width:min(100%,320px)}
+ .atlas-grid{grid-template-columns:1fr}
+ .atlas-map-wrap{border-right:0;border-bottom:1px solid rgba(70,43,25,.13)}
+ .atlas-map{min-height:0;aspect-ratio:700/620;max-height:650px}
+ .atlas-aside{padding:28px}
+ .atlas-aside-foot{margin-top:22px}
+ .about-intro-grid{gap:38px}
+ body[data-page="about"] .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+ :root{--gutter:20px;--header-height:68px}
+ .site-header{padding-inline:20px}
+ .brand{min-width:0;gap:8px}.brand-symbol{width:27px;height:31px}.brand-wordmark strong{font-size:13px}.brand-wordmark small{font-size:6px}
+ .nav-toggle{width:34px;height:34px;padding:2px}
+ .home-hero{min-height:100svh;background-position:58% center}
+ .hero-inner{min-height:100svh;padding-top:110px;padding-bottom:120px}
+ .hero-copy{max-width:100%}.hero-copy h1{font-size:clamp(58px,16vw,84px)}
+ .hero-stamp{width:104px;height:104px;margin:38px 8px 0 auto;flex:0 0 auto}
+ .hero-stamp b{font-size:20px}.hero-stamp span{font-size:7px}.hero-stamp small{font-size:5px}
+ .hero-bottom{bottom:18px;font-size:7px}
+ .home-africa-section{padding:18px 12px}
+ .africa-panel{width:100%;grid-template-columns:1fr}
+ .africa-panel-copy{padding:28px 23px 25px}
+ .africa-panel-copy h2{font-size:clamp(64px,18vw,89px);margin:22px 0 0;letter-spacing:-.085em}
+ .africa-kicker{font-size:10px;margin:13px 0 8px}
+ .africa-panel-text{font-size:14px;line-height:1.48;margin:13px 0 19px}
+ .africa-panel-copy .button{min-height:46px;padding:0 16px}
+ .africa-panel-index{font-size:7px;margin-top:20px;padding-top:16px}
+ .africa-collage{aspect-ratio:auto;height:auto;padding:6px;gap:6px;grid-template-columns:1fr 1fr;grid-template-rows:148px 116px 30px}
+ .tile-market{grid-column:1;grid-row:1}.tile-portrait{grid-column:2;grid-row:1/3}.tile-food{grid-column:1;grid-row:2}.tile-pattern{display:none}
+ .africa-collage .collage-tile span{left:9px;bottom:8px;font-size:6px}
+ .collage-caption{grid-row:3;padding:3px 6px;font-size:6px;letter-spacing:.08em}
+ .magazine-feature.home-quote-section{padding:58px 0 64px}
+ .magazine-layout{grid-template-columns:1fr;gap:36px}
+ .magazine-quote{padding:0}
+ .magazine-quote .quote-mark{font-size:78px;margin:33px 0 13px}
+ .magazine-quote blockquote{font-size:clamp(29px,8.7vw,43px);line-height:1.1}
+ .quote-credit{gap:10px;margin-top:22px;font-size:7px}.quote-credit span+span{padding-left:10px}
+ .magazine-read{margin-top:22px}
+ .magazine-cover-link{width:min(73%,285px);justify-self:center;margin-top:1px}
+ .magazine-cover{padding:9px}
+ .magazine-masthead strong{font-size:30px}
+ .magazine-cover-text>strong{font-size:50px}
+ .magazine-cover-text>b{font-size:12px}
+ .cover-seal{width:48px;height:48px;font-size:6px}
+ .magazine-ghost{top:24%;right:-20px;font-size:260px}
+ .journal-home-grid{grid-template-columns:1fr;gap:27px}
+ .journal-lead-image{height:clamp(230px,68vw,340px)}
+ .journal-lead-link h3{font-size:clamp(27px,8vw,36px)}
+ .journal-lead-link p{font-size:12px;line-height:1.6}
+ .journal-side{display:flex;flex-direction:column;gap:0;width:100%;padding-top:4px;border-top:1px solid var(--line)}
+ .journal-small{grid-template-columns:112px minmax(0,1fr);gap:14px;padding:15px 0;align-items:center;width:100%;min-width:0}
+ .journal-small img{width:112px;height:100px;object-fit:cover}
+ .journal-small .journal-meta{font-size:7px;letter-spacing:.08em;line-height:1.45}
+ .journal-small h4{font-size:19px;line-height:1.12;margin:5px 0 8px}
+ .small-read{font-size:7px}
+ .event-nudge{margin-top:14px;padding:18px}
+ .about-page-intro{padding-block:40px 38px}
+ .about-intro-grid{grid-template-columns:1fr;gap:28px}
+ .about-intro-copy h1,.journal-page-intro h1,.contact-page-intro h1,.recipe-page-intro h1{font-size:clamp(46px,14vw,68px)}
+ .about-intro-photo{justify-self:start;width:83%;max-width:340px;margin-left:7px}
+ .about-intro-photo img{height:clamp(250px,78vw,360px)}
+ .about-intro-photo figcaption{font-size:7px}
+ .journal-page-intro,.contact-page-intro,.recipe-page-intro{padding:38px 0 10px}
+ .country-page-intro{padding:33px 0 28px}
+ .country-intro-grid{grid-template-columns:1fr;gap:20px}
+ .country-intro-grid>img{height:210px;width:100%;max-width:none;justify-self:stretch}
+ .country-intro-grid h1{font-size:54px}
+ body[data-page="about"] .card-grid{grid-template-columns:1fr 1fr;gap:22px 13px}
+ body[data-page="about"] .card-grid .card-image{height:150px}
+ body[data-page="about"] .card-grid h3{font-size:20px}
+ .recipe-detail-hero{grid-template-columns:1fr;padding:22px 20px 40px;gap:20px}
+ .recipe-detail-image{height:235px;min-height:0;max-width:none}
+ .recipe-detail-heading{padding:0}
+ .recipe-detail-heading h1{font-size:43px}
+ .atlas-topline{padding:13px 14px;font-size:6px;letter-spacing:.11em}
+ .atlas-map-wrap{padding:9px}
+ .atlas-map{min-height:0;aspect-ratio:700/650}
+ .atlas-tip{left:9px;bottom:9px;width:46%;padding:8px 9px}
+ .atlas-tip small{font-size:6px}.atlas-tip strong{font-size:16px}.atlas-tip span{font-size:7px}
+ .atlas-marker{width:7px;height:7px;margin:-3.5px 0 0 -3.5px}
+ .atlas-marker.is-featured{width:9px;height:9px;margin:-4.5px 0 0 -4.5px}
+ .atlas-legend{font-size:7px;gap:8px 12px;padding-top:10px}
+ .atlas-aside{padding:24px 18px}
+ .atlas-aside h2{font-size:42px}
+ .atlas-selected{margin-top:20px;padding:17px 15px}
+ .atlas-aside-foot{font-size:6px}
+ .form-panel,.contact-form,.partnership-form,.interest-form,.involved-form{padding:21px 17px}
+ .form-grid{grid-template-columns:1fr;gap:15px}
+ .form-grid .wide{grid-column:auto}
+ .form-grid input,.form-grid select,.form-grid textarea,.interest-form input,.interest-form select,.interest-form textarea,.contact-form input,.contact-form select,.contact-form textarea,.partnership-form input,.partnership-form select,.partnership-form textarea,.involved-form input,.involved-form select,.involved-form textarea{min-height:49px}
+ .footer-top{grid-template-columns:1fr 1fr;gap:30px 18px}
+ .footer-bottom{align-items:flex-start}
+ .site-credit{width:100%;padding-top:7px}
+ .credit-card{width:100%;max-width:390px;padding:30px 25px}
+}
+@media(max-width:380px){
+ .journal-small{grid-template-columns:95px minmax(0,1fr);gap:11px}
+ .journal-small img{width:95px;height:90px}
+ .journal-small h4{font-size:17px}
+ .atlas-tip{width:49%}
+ .africa-collage{grid-template-rows:130px 106px 28px}
+ .collage-caption{font-size:5.5px}
+}
+@media(prefers-reduced-motion:reduce){.akwaaba-mark,.akwaaba-mark:before,.akwaaba-mark:after{animation:none!important;opacity:1;transform:none}.site-header,.credit-card,.credit-scrim{transition:none!important}}
+
+/* Final composition pass */
+body.credit-open{overflow:hidden}
+.site-header .nav-toggle{border:0!important;outline-offset:5px;box-shadow:none!important}
+.arrow-icon.arrow-up{transform:rotate(-45deg)}
+
+/* A quiet welcome, revealed when the reader reaches the table */
+.akwaaba-mark{opacity:0;transform:translateY(9px) rotate(-4deg);animation:none}
+.akwaaba-mark.is-visible{animation:akwaabaArrive .72s .08s cubic-bezier(.22,.72,.25,1) forwards}
+.akwaaba-mark:before{transform:scaleX(0);animation:none}
+.akwaaba-mark.is-visible:before{animation:akwaabaUnderline .72s .48s ease forwards}
+.akwaaba-mark:after{opacity:0;animation:none}
+.akwaaba-mark.is-visible:after{animation:akwaabaDot .35s .84s ease forwards}
+@keyframes akwaabaArrive{from{opacity:0;transform:translateY(9px) rotate(-5deg)}to{opacity:1;transform:translateY(0) rotate(-4deg)}}
+
+/* The Inside Africa spread fills one desktop screen without leaving a long tail. */
+.home-africa-section{height:100svh;min-height:0;padding:26px clamp(18px,3.5vw,52px);}
+.africa-panel{height:100%;min-height:0;}
+.africa-panel-copy{min-height:0;}
+.africa-collage{height:100%;min-height:0;grid-template-columns:1fr 1fr 1.05fr;grid-template-rows:1fr .88fr 34px;gap:8px;padding:8px;background:#f8f3e9;}
+.africa-collage .collage-tile{display:block;position:relative;min-width:0;min-height:0;overflow:hidden;background:#d8c3a9;}
+.africa-collage .collage-tile img{width:100%;height:100%;object-fit:cover;transition:transform .75s cubic-bezier(.2,.7,.2,1);filter:saturate(.9);}
+.africa-collage .collage-tile:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(20,12,8,.54));pointer-events:none;}
+.africa-collage .collage-tile:hover img{transform:scale(1.045);}
+.africa-collage .collage-tile span{position:absolute;z-index:1;left:14px;bottom:12px;color:#fff;font:800 8px var(--display);letter-spacing:.14em;text-shadow:0 1px 10px rgba(0,0,0,.45);}
+.africa-collage .tile-market{grid-column:1;grid-row:1;}
+.africa-collage .tile-pattern{display:block;grid-column:2;grid-row:1;}
+.africa-collage .tile-portrait{grid-column:3;grid-row:1/3;}
+.africa-collage .tile-portrait img{object-position:center 20%;}
+.africa-collage .tile-food{grid-column:1/3;grid-row:2;}
+.africa-collage .collage-caption{grid-column:1/4;grid-row:3;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:3px 10px;color:#685442;font:800 8px var(--display);font-style:normal;letter-spacing:.12em;}
+.africa-panel-index{font-size:8px;letter-spacing:.13em;}
+
+/* Remove the repetitive end-word italic treatment from section headings. */
+h2 em{font-style:normal;color:inherit;}
+.section-heading h2 em,.split-copy h2 em,.dark-band h2 em,.page-intro h2 em{color:inherit;}
+
+/* A more geographic map face, with quiet coordinate guides and a separate island silhouette. */
+.atlas-graticule path{fill:none;stroke:rgba(132,101,73,.17);stroke-width:1;stroke-dasharray:3 6;}
+.atlas-island{fill:#d2b28c;stroke:#9f7957;stroke-width:2.1;stroke-linejoin:round;}
+.atlas-texture{fill:url(#atlasDots);pointer-events:none;}
+.country-meta-line{font:800 8px var(--display);letter-spacing:.13em;text-transform:uppercase;color:#9a6545;margin:20px 0 0;}
+
+/* Forms share the same editorial rhythm and have clear, generous touch targets. */
+.newsletter-form{display:flex;align-items:stretch;gap:0;max-width:620px;}
+.newsletter-form input{min-width:0;flex:1;}
+.newsletter-form button{flex:0 0 auto;}
+.form-grid label,.contact-form label,.partnership-form label,.interest-form label,.involved-form label{min-width:0;}
+.form-grid input,.form-grid select,.form-grid textarea,.contact-form input,.contact-form select,.contact-form textarea,.partnership-form input,.partnership-form select,.partnership-form textarea,.interest-form input,.interest-form select,.interest-form textarea,.involved-form input,.involved-form select,.involved-form textarea{font:400 14px/1.4 var(--sans);}
+.contact-form .button,.partnership-form .button,.interest-form .button,.involved-form .button{margin-top:3px;}
+.form-feedback:empty{display:none;}
+
+@media(max-width:900px){
+ .home-africa-section{height:auto;min-height:0;padding:24px 18px;}
+ .africa-panel{height:auto;}
+ .africa-collage{height:auto;min-height:0;aspect-ratio:1.16;grid-template-columns:1fr 1fr;grid-template-rows:1fr .82fr 32px;}
+ .africa-collage .tile-market{grid-column:1;grid-row:1;}
+ .africa-collage .tile-pattern{display:none;}
+ .africa-collage .tile-portrait{grid-column:2;grid-row:1/3;}
+ .africa-collage .tile-food{grid-column:1;grid-row:2;}
+ .africa-collage .collage-caption{grid-column:1/3;grid-row:3;}
+}
+@media(max-width:640px){
+ .home-africa-section{padding:18px 12px;}
+ .africa-panel-copy{padding:28px 23px 25px;}
+ .africa-panel-copy h2{font-size:clamp(64px,18vw,89px);}
+ .africa-collage{aspect-ratio:auto;height:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:148px 116px 30px;padding:6px;gap:6px;}
+ .africa-collage .tile-market{grid-column:1;grid-row:1;}
+ .africa-collage .tile-portrait{grid-column:2;grid-row:1/3;}
+ .africa-collage .tile-food{grid-column:1;grid-row:2;}
+ .africa-collage .tile-pattern{display:none;}
+ .africa-collage .collage-tile span{left:9px;bottom:8px;font-size:6px;letter-spacing:.1em;}
+ .africa-collage .collage-caption{grid-column:1/3;grid-row:3;padding:2px 5px;font-size:6px;letter-spacing:.07em;}
+ .atlas-map{aspect-ratio:700/620;}
+ .newsletter-form{display:grid;grid-template-columns:1fr;gap:10px;}
+ .newsletter-form button{width:100%;}
+}
+@media(max-width:380px){
+ .africa-collage{grid-template-rows:130px 106px 28px;}
+ .africa-collage .collage-caption{font-size:5.3px;}
+}
+@media(prefers-reduced-motion:reduce){.akwaaba-mark,.akwaaba-mark:before,.akwaaba-mark:after{animation:none!important;opacity:1;transform:none;}}
+
+/* Full brand lockup: the world name stays visible without crowding the menu. */
+.brand-wordmark strong{font-size:clamp(11px,1vw,14px);letter-spacing:.045em;white-space:nowrap;}
+.brand-wordmark small{font-size:6.5px;letter-spacing:.17em;}
+@media(max-width:640px){.brand{gap:8px}.brand-symbol{width:29px;height:34px}.brand-wordmark strong{font-size:11px;letter-spacing:.025em}.brand-wordmark small{font-size:6px;letter-spacing:.11em}}
