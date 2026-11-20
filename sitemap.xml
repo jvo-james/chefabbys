@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Replace the example domain once the official site URL is approved. -->
+  <url><loc>https://www.example.com/</loc></url>
+  <url><loc>https://www.example.com/about.html</loc></url>
+  <url><loc>https://www.example.com/explore-africa.html</loc></url>
+  <url><loc>https://www.example.com/recipes.html</loc></url>
+  <url><loc>https://www.example.com/country.html</loc></url>
+  <url><loc>https://www.example.com/food-journey.html</loc></url>
+  <url><loc>https://www.example.com/recipe-detail.html</loc></url>
+  <url><loc>https://www.example.com/casof.html</loc></url>
+  <url><loc>https://www.example.com/course-detail.html</loc></url>
+  <url><loc>https://www.example.com/student-dashboard.html</loc></url>
+  <url><loc>https://www.example.com/journal.html</loc></url>
+  <url><loc>https://www.example.com/story.html</loc></url>
+  <url><loc>https://www.example.com/big-street-feast.html</loc></url>
+  <url><loc>https://www.example.com/work-with-me.html</loc></url>
+  <url><loc>https://www.example.com/contact.html</loc></url>
+</urlset>
