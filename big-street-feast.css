@@ -1,1 +1,240 @@
-.feast-hero{min-height:680px;position:relative;background-size:cover;background-position:center;display:flex;align-items:center;color:white}.feast-hero .page-hero-content{position:relative;z-index:1}.feast-hero h1{font:400 clamp(62px,9vw,120px)/.9 var(--serif);margin:25px 0}.feast-hero h1 em{color:#e8ad72}.feast-hero p{font:400 18px var(--serif);max-width:460px;color:#f0dfce}@media(max-width:640px){.feast-hero{min-height:600px}}.feast-editions{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:40px}.feast-editions article{padding:22px 0;border-top:1px solid rgba(255,255,255,.25)}.feast-editions h3{font:400 28px var(--serif);margin:12px 0}.feast-editions p{font-size:12px;color:#d7c8b8}.dark-band .feast-editions .meta-line{color:var(--orange)}@media(max-width:640px){.feast-editions{grid-template-columns:1fr;gap:10px}}
+/* Big Street Feast | a community-first editorial experience */
+.feast-hero{position:relative;isolation:isolate;min-height:clamp(680px,calc(100svh - var(--header-height)),850px);display:flex;align-items:center;overflow:hidden;color:#fff;background-color:#28170f;background-position:center 43%;background-size:cover}
+.feast-hero-shade{position:absolute;z-index:0;inset:0;background:linear-gradient(90deg,rgba(25,14,8,.91) 0%,rgba(25,14,8,.79) 42%,rgba(25,14,8,.32) 74%,rgba(25,14,8,.16) 100%),linear-gradient(0deg,rgba(25,14,8,.5),transparent 42%)}
+.feast-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(225px,290px);align-items:center;gap:clamp(35px,8vw,120px);position:relative;z-index:1;padding-top:clamp(65px,9vh,110px);padding-bottom:120px}
+.feast-hero-copy{max-width:760px}
+.feast-eyebrow{display:inline-flex;align-items:center;gap:11px;color:#f0bc88;font:800 9px/1.4 var(--display);letter-spacing:.19em;text-transform:uppercase}
+.feast-eyebrow i{font-size:13px}
+.feast-hero h1{max-width:820px;font:400 clamp(58px,8.4vw,116px)/.91 var(--serif);letter-spacing:-.055em;margin:26px 0 25px;text-wrap:balance}
+.feast-hero h1 em{font-style:italic;color:#f0b77d}
+.feast-hero-copy>p{max-width:560px;color:#f0e3d5;font:400 clamp(16px,1.45vw,19px)/1.65 var(--serif);margin:0}
+.feast-hero-actions{display:flex;align-items:center;gap:27px;flex-wrap:wrap;margin-top:34px}
+.feast-hero-actions .button{min-height:52px;gap:16px}
+.feast-quiet-link{display:inline-flex;align-items:center;gap:13px;color:#fff7ed;font:800 9px var(--display);letter-spacing:.13em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.55);padding:0 0 9px}
+.feast-quiet-link .arrow-icon{border-color:#e8a96e}
+.feast-hero-note{align-self:center;padding:28px 26px 24px;border:1px solid rgba(255,245,232,.45);background:rgba(30,17,10,.42);backdrop-filter:blur(8px);box-shadow:0 18px 55px rgba(0,0,0,.16)}
+.feast-note-kicker{display:block;color:#f0bc88;font:800 8px var(--display);letter-spacing:.19em}
+.feast-hero-note>strong{display:block;margin:19px 0 0;font:400 clamp(47px,5vw,65px)/.9 var(--serif);letter-spacing:-.05em;color:#fff8ed}
+.feast-hero-note sup{font-size:.47em;color:#f0b77d;vertical-align:top}
+.feast-note-label{display:block;margin-top:8px;color:#edddca;font:800 8px var(--display);letter-spacing:.13em;text-transform:uppercase}
+.feast-note-rule{height:1px;background:rgba(255,255,255,.3);margin:24px 0 17px}
+.feast-hero-note p{color:#e7d6c5;font:400 14px/1.8 var(--serif);margin:0}
+.feast-hero-note p b{color:#fff;font-weight:700}
+.feast-hero-bottom{position:absolute;z-index:2;left:50%;bottom:25px;transform:translateX(-50%);display:flex;justify-content:space-between;align-items:center;gap:20px;color:#f2dfcd;font:800 8px var(--display);letter-spacing:.16em}
+.feast-hero-bottom a{display:inline-flex;align-items:center;gap:12px;color:#f2dfcd}
+.feast-hero-bottom .arrow-icon{border-color:#e8a96e}
+
+.feast-story-section{background:#f6efe4}
+.feast-story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(40px,8vw,120px);align-items:start}
+.feast-story-heading h2{font:400 clamp(42px,5.6vw,74px)/.98 var(--serif);letter-spacing:-.045em;margin:22px 0 0;max-width:650px}
+.feast-story-heading h2 em{color:#9d5031;font-style:italic}
+.feast-story-copy{padding-top:5px}
+.feast-story-copy p{max-width:620px;color:#665649;font-size:13px;line-height:1.85;margin:0 0 17px}
+.feast-story-copy .feast-lead{color:#342218;font:400 clamp(19px,2vw,25px)/1.48 var(--serif)}
+.feast-story-copy .text-link{display:inline-flex;align-items:center;gap:15px;margin-top:10px;color:#87442b}
+.feast-pullquote{position:relative;display:grid;grid-template-columns:185px minmax(0,1fr) 32px;align-items:center;gap:28px;margin-top:76px;padding:24px 28px;border-top:1px solid rgba(99,66,43,.2);border-bottom:1px solid rgba(99,66,43,.2)}
+.feast-pullquote>span{font:800 8px/1.5 var(--display);letter-spacing:.17em;color:#9a5635}
+.feast-pullquote p{font:italic 400 clamp(20px,2.6vw,31px)/1.3 var(--serif);color:#39251a;margin:0;max-width:850px}
+.feast-pullquote>i{font-size:22px;color:#bb7950;align-self:center}
+
+.feast-impact{background:#281a12;color:#f7eee2;position:relative;overflow:hidden}
+.feast-impact:after{content:"BSF";position:absolute;right:-.02em;bottom:-.26em;color:rgba(255,255,255,.035);font:800 clamp(170px,27vw,390px)/.8 var(--display);letter-spacing:-.12em;pointer-events:none}
+.feast-impact>.wrap{position:relative;z-index:1}
+.feast-impact-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);gap:50px;align-items:end}
+.feast-impact-heading h2{font:400 clamp(43px,6vw,76px)/.98 var(--serif);letter-spacing:-.04em;margin:17px 0 0;max-width:680px}
+.feast-impact-heading>p{color:#d4c3b2;font-size:12px;line-height:1.8;margin:0 0 5px;max-width:390px}
+.feast-impact-stats{display:grid;grid-template-columns:1.2fr 1fr 1fr;margin-top:60px;border-top:1px solid rgba(255,255,255,.22);border-bottom:1px solid rgba(255,255,255,.22)}
+.feast-impact-stat{min-height:175px;padding:28px 30px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;justify-content:center}
+.feast-impact-stat:first-child{padding-left:0}
+.feast-impact-stat:last-child{border-right:0}
+.feast-impact-stat strong{font:400 clamp(47px,6.4vw,78px)/.92 var(--serif);letter-spacing:-.05em;color:#f2b77d}
+.feast-impact-stat strong sup{font-size:.45em;vertical-align:top}
+.feast-impact-stat span:not(.stat-suffix){margin-top:14px;color:#d9c8b7;font:800 8px/1.6 var(--display);letter-spacing:.13em;text-transform:uppercase;max-width:230px}
+.feast-impact-stat .stat-suffix{font:800 12px var(--display);letter-spacing:.1em;color:#f2b77d}
+.feast-source-note{font-size:9px;color:#a9947f;margin:15px 0 0}
+
+.feast-edition-section{background:#ede1d1}
+.feast-section-heading{align-items:end}
+.feast-section-heading h2{font:400 clamp(42px,5.6vw,70px)/.98 var(--serif);letter-spacing:-.045em;margin:18px 0 0}
+.feast-section-heading h2 em{color:#9c5435}
+.feast-section-heading .section-intro{max-width:400px;margin:0 0 6px;color:#776452;font-size:12px;line-height:1.75}
+.feast-timeline{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.feast-timeline-card{padding:clamp(25px,3.5vw,43px);background:#f8f2e9;border:1px solid rgba(80,49,28,.12);min-height:270px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 10px 28px rgba(57,35,19,.035)}
+.feast-timeline-card-current{background:#2c1c13;color:#f8eee2;border-color:#2c1c13}
+.feast-timeline-top{width:100%;display:flex;justify-content:space-between;align-items:center;gap:15px;padding-bottom:19px;border-bottom:1px solid rgba(100,68,45,.2);font:800 8px var(--display);letter-spacing:.16em;color:#995435}
+.feast-timeline-card-current .feast-timeline-top{border-color:rgba(255,255,255,.2);color:#e6ab75}
+.feast-timeline-top b{font:400 25px var(--serif);letter-spacing:-.03em}
+.feast-timeline-card h3{font:400 clamp(25px,3vw,34px)/1.08 var(--serif);margin:24px 0 11px}
+.feast-timeline-card p{font-size:12px;line-height:1.75;color:#766454;max-width:540px;margin:0 0 22px}
+.feast-timeline-card-current p{color:#d4c3b2}
+.feast-timeline-place{display:inline-flex;align-items:center;gap:9px;margin-top:auto;color:#975235;font:800 8px var(--display);letter-spacing:.12em;text-transform:uppercase}
+.feast-timeline-card-current .feast-timeline-place{color:#f0b77d}
+
+.feast-city-section{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);background:#f7f0e5;min-height:570px}
+.feast-city-photo{min-height:570px;background-size:cover;background-position:center;background-color:#8d6042;position:relative}
+.feast-city-photo:after{content:"THE BIG STREET FEAST · ACCRA & KUMASI";position:absolute;left:clamp(20px,4vw,55px);bottom:25px;color:#fff;font:800 8px var(--display);letter-spacing:.17em;text-shadow:0 2px 12px rgba(0,0,0,.65)}
+.feast-city-copy{padding:clamp(38px,6vw,85px);align-self:center;max-width:760px}
+.feast-city-copy h2{font:400 clamp(40px,5vw,63px)/.99 var(--serif);letter-spacing:-.045em;margin:18px 0}
+.feast-city-copy h2 em{color:#9e5535}
+.feast-city-copy>p{font-size:12px;line-height:1.8;color:#766555;max-width:480px;margin:0 0 26px}
+.feast-city-list{border-top:1px solid rgba(87,57,37,.2)}
+.feast-city-list article{padding:17px 0;border-bottom:1px solid rgba(87,57,37,.2)}
+.feast-city-list article>span{color:#9e5535;font:800 8px var(--display);letter-spacing:.16em}
+.feast-city-list p{font-size:11px;line-height:1.7;color:#6e5b49;margin:8px 0 0}
+.feast-city-copy>small{display:block;margin-top:17px;color:#a08a75;font-size:9px;line-height:1.5}
+
+.feast-people-section{background:#f1e7da}
+.feast-people-grid{display:grid;grid-template-columns:1.18fr .82fr;grid-template-rows:1fr 1fr;gap:22px;margin-top:44px}
+.feast-people-card{min-width:0;background:#faf6ee;display:flex;flex-direction:column}
+.feast-people-card-large{grid-row:span 2}
+.feast-people-card img{width:100%;height:225px;object-fit:cover}
+.feast-people-card-large img{height:100%;min-height:520px;max-height:620px}
+.feast-people-card>div{padding:20px 23px 24px}
+.feast-people-card>div>span{color:#a25d3c;font:800 8px var(--display);letter-spacing:.16em}
+.feast-people-card h3{font:400 25px/1.08 var(--serif);margin:9px 0}
+.feast-people-card p{font-size:11px;line-height:1.65;color:#786656;margin:0;max-width:430px}
+
+.feast-partners-section{background:#79412b;color:#fff5e8;padding:clamp(65px,8vw,110px) 0;position:relative;overflow:hidden}
+.feast-partners-section:after{content:"";position:absolute;right:-120px;top:-180px;width:470px;height:470px;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 0 32px rgba(255,255,255,.025),0 0 0 68px rgba(255,255,255,.02);pointer-events:none}
+.feast-partners-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,.9fr);gap:clamp(40px,8vw,110px);align-items:center}
+.feast-partners-copy h2{font:400 clamp(41px,5.2vw,66px)/.98 var(--serif);letter-spacing:-.04em;margin:20px 0}
+.feast-partners-copy>p{max-width:490px;font-size:12px;line-height:1.8;color:#ecd7c5;margin:0}
+.feast-partner-link{display:inline-flex;align-items:center;gap:14px;margin-top:28px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.55);font:800 9px var(--display);letter-spacing:.14em;text-transform:uppercase;color:#fff5e8}
+.feast-partner-link .arrow-icon{border-color:#f0b77d}
+.feast-partner-highlights{padding:clamp(24px,4vw,38px);background:#f8f1e6;color:#2a1b13;box-shadow:0 24px 50px rgba(37,18,9,.16)}
+.feast-partner-kicker{display:block;color:#a15a38;font:800 8px var(--display);letter-spacing:.17em;margin-bottom:22px}
+.feast-partner-highlights article{display:grid;grid-template-columns:92px 1fr;gap:20px;align-items:center;padding:20px 0;border-top:1px solid rgba(80,51,32,.16)}
+.feast-partner-mark{height:72px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#e8dfd0;color:#5c4937;text-align:center;font:800 17px/.9 var(--display);letter-spacing:-.05em}
+.feast-partner-mark small{font-size:10px;letter-spacing:.25em;margin-top:4px}
+.feast-partner-mark-red{background:#d83b36;color:#fff}
+.feast-partner-highlights article>div:last-child>span{color:#a15a38;font:800 7px var(--display);letter-spacing:.12em}
+.feast-partner-highlights h3{font:400 25px var(--serif);margin:6px 0}
+.feast-partner-highlights article p{font-size:10px;line-height:1.6;color:#796958;margin:0}
+.feast-partner-footnote{font-size:8px;line-height:1.6;color:#9b8a78;margin:12px 0 0}
+
+.feast-values-section{background:#f8f2e8}
+.feast-values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:42px;border-top:1px solid rgba(76,49,31,.18);border-bottom:1px solid rgba(76,49,31,.18)}
+.feast-values-grid article{padding:30px 28px;min-height:240px;border-right:1px solid rgba(76,49,31,.18)}
+.feast-values-grid article:first-child{padding-left:0}
+.feast-values-grid article:last-child{border-right:0}
+.feast-value-icon{display:grid;place-items:center;width:43px;height:43px;border:1px solid rgba(160,83,50,.36);border-radius:50%;color:#a35a38;font-size:16px}
+.feast-values-grid h3{font:400 26px var(--serif);margin:20px 0 9px}
+.feast-values-grid p{font-size:11px;line-height:1.75;color:#796858;max-width:300px;margin:0}
+
+.feast-press-section{background:#ede1d1;padding:clamp(65px,8vw,100px) 0}
+.feast-press-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;margin-top:35px;border-top:1px solid rgba(77,48,29,.2)}
+.feast-press-grid a{position:relative;display:block;padding:23px 40px 24px 0;border-bottom:1px solid rgba(77,48,29,.2);min-height:145px}
+.feast-press-grid a>span{color:#a15a38;font:800 7px var(--display);letter-spacing:.14em}
+.feast-press-grid h3{font:400 23px/1.16 var(--serif);color:#342218;margin:11px 28px 0 0;max-width:490px}
+.feast-press-grid .arrow-icon{position:absolute;right:7px;top:50%;width:10px;height:10px;border-color:#9e5535}
+.feast-press-grid a:hover h3{color:#9e5535}
+
+.feast-involve-section{background:#281a12;color:#fbf2e7;padding:clamp(65px,8vw,105px) 0;position:relative;overflow:hidden}
+.feast-involve-section:after{content:"";position:absolute;right:-160px;bottom:-230px;width:510px;height:510px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none}
+.feast-involve-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.7fr);gap:clamp(40px,8vw,110px);align-items:center}
+.feast-involve-layout h2{font:400 clamp(42px,5.6vw,72px)/.98 var(--serif);letter-spacing:-.045em;margin:20px 0}
+.feast-involve-layout h2 em{color:#f0b77d}
+.feast-involve-layout>div>p{max-width:540px;color:#d7c7b5;font-size:12px;line-height:1.8;margin:0}
+.feast-contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:24px;margin-top:30px}
+.feast-contact-actions .button{min-height:52px}
+.feast-phone-link{display:inline-flex;align-items:center;gap:10px;color:#f2dec9;font:800 9px var(--display);letter-spacing:.09em}
+.feast-phone-link i{color:#eeb47b}
+.feast-involve-card{padding:clamp(24px,3vw,36px);background:#f7efe3;color:#352319;box-shadow:0 20px 45px rgba(0,0,0,.18)}
+.feast-involve-card>span{color:#9d5534;font:800 8px var(--display);letter-spacing:.16em}
+.feast-involve-card ul{list-style:none;padding:0;margin:18px 0 22px}
+.feast-involve-card li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(78,48,29,.13);font:400 15px/1.45 var(--serif);color:#514033}
+.feast-involve-card li i{margin-top:3px;color:#a35a38;font-size:11px}
+.feast-involve-card small{font-size:9px;line-height:1.6;color:#9a8978;display:block}
+
+@media(max-width:980px){
+ .feast-hero-layout{grid-template-columns:minmax(0,1fr) 235px;gap:32px}
+ .feast-story-grid{gap:45px}
+ .feast-city-copy{padding:42px}
+ .feast-partners-layout{grid-template-columns:1fr 1fr;gap:35px}
+ .feast-people-grid{gap:15px}
+}
+@media(max-width:760px){
+ .feast-hero{min-height:690px;background-position:58% center}
+ .feast-hero-layout{grid-template-columns:1fr;align-content:center;gap:28px;padding-top:95px;padding-bottom:125px}
+ .feast-hero h1{font-size:clamp(55px,11vw,82px);max-width:650px}
+ .feast-hero-copy>p{max-width:540px}
+ .feast-hero-note{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:16px;row-gap:3px;padding:15px 18px;max-width:430px}
+ .feast-note-kicker{grid-column:1/-1}
+ .feast-hero-note>strong{grid-row:2/4;margin:7px 0;font-size:49px}
+ .feast-note-label{margin:0;align-self:end}
+ .feast-note-rule{display:none}
+ .feast-hero-note p{grid-column:2;grid-row:3;font-size:11px;line-height:1.4;align-self:start}
+ .feast-story-grid{grid-template-columns:1fr;gap:25px}
+ .feast-story-heading h2{max-width:600px}
+ .feast-pullquote{grid-template-columns:1fr 25px;gap:13px;margin-top:48px;padding:22px 0}
+ .feast-pullquote>span{grid-column:1/-1}
+ .feast-pullquote p{font-size:24px}
+ .feast-impact-heading{grid-template-columns:1fr;gap:18px}
+ .feast-impact-stats{margin-top:35px}
+ .feast-impact-stat{min-height:145px;padding:22px 18px}
+ .feast-impact-stat:first-child{padding-left:0}
+ .feast-city-section{grid-template-columns:1fr}
+ .feast-city-photo{min-height:370px}
+ .feast-city-copy{padding:48px 24px 55px}
+ .feast-people-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+ .feast-people-card-large{grid-column:1/-1;grid-row:auto}
+ .feast-people-card-large img{height:340px;min-height:0;max-height:none}
+ .feast-people-card img{height:190px}
+ .feast-partners-layout{grid-template-columns:1fr;gap:35px}
+ .feast-partner-highlights{max-width:600px}
+ .feast-values-grid{grid-template-columns:1fr}
+ .feast-values-grid article,.feast-values-grid article:first-child{min-height:0;padding:24px 0;border-right:0;border-bottom:1px solid rgba(76,49,31,.18)}
+ .feast-values-grid article:last-child{border-bottom:0}
+ .feast-values-grid h3{margin:14px 0 7px}
+ .feast-press-grid{gap:0 22px}
+ .feast-involve-layout{grid-template-columns:1fr;gap:35px}
+}
+@media(max-width:560px){
+ .feast-hero{min-height:760px;min-height:calc(100svh - var(--header-height) + 170px);background-position:63% center}
+ .feast-hero-shade{background:linear-gradient(90deg,rgba(25,14,8,.91),rgba(25,14,8,.65) 70%,rgba(25,14,8,.36)),linear-gradient(0deg,rgba(25,14,8,.6),transparent 60%)}
+ .feast-hero-layout{padding-top:70px;padding-bottom:125px}
+ .feast-hero h1{font-size:clamp(50px,13vw,69px);line-height:.94;margin:20px 0}
+ .feast-hero-copy>p{font-size:15px;line-height:1.6}
+ .feast-hero-actions{display:grid;grid-template-columns:1fr;gap:15px;margin-top:25px;justify-items:start}
+ .feast-quiet-link{margin-left:2px}
+ .feast-hero-note{max-width:100%;padding:13px 15px}
+ .feast-hero-bottom{bottom:17px;font-size:6px;letter-spacing:.1em}
+ .feast-hero-bottom a{font-size:6px}
+ .feast-story-heading h2{font-size:43px}
+ .feast-story-copy .feast-lead{font-size:20px}
+ .feast-story-copy p{font-size:12px}
+ .feast-pullquote p{font-size:21px}
+ .feast-impact-heading h2{font-size:44px}
+ .feast-impact-stats{grid-template-columns:1fr 1fr}
+ .feast-impact-stat{min-height:120px;padding:18px 12px;border-bottom:1px solid rgba(255,255,255,.2)}
+ .feast-impact-stat:first-child{grid-column:1/-1;padding-left:0}
+ .feast-impact-stat:nth-child(2){border-right:1px solid rgba(255,255,255,.2)}
+ .feast-impact-stat:last-child{border-bottom:0}
+ .feast-impact-stat strong{font-size:54px}
+ .feast-timeline{grid-template-columns:1fr;gap:12px;margin-top:28px}
+ .feast-timeline-card{min-height:0;padding:24px 20px}
+ .feast-timeline-card h3{font-size:27px;margin:19px 0 9px}
+ .feast-city-photo{min-height:290px}
+ .feast-city-copy{padding:40px 22px 48px}
+ .feast-city-copy h2{font-size:43px}
+ .feast-people-grid{grid-template-columns:1fr;gap:15px;margin-top:28px}
+ .feast-people-card-large{grid-column:auto}
+ .feast-people-card-large img{height:260px}
+ .feast-people-card img{height:220px}
+ .feast-people-card>div{padding:17px 18px 20px}
+ .feast-people-card h3{font-size:23px}
+ .feast-partners-copy h2{font-size:44px}
+ .feast-partner-highlights{padding:23px 18px}
+ .feast-partner-highlights article{grid-template-columns:76px 1fr;gap:13px}
+ .feast-partner-mark{height:65px;font-size:14px}
+ .feast-partner-highlights h3{font-size:22px}
+ .feast-section-heading h2{font-size:43px}
+ .feast-values-grid{margin-top:25px}
+ .feast-press-grid{grid-template-columns:1fr;margin-top:25px}
+ .feast-press-grid a{min-height:0;padding:19px 36px 20px 0}
+ .feast-press-grid h3{font-size:21px}
+ .feast-involve-layout h2{font-size:45px}
+ .feast-contact-actions{align-items:flex-start;flex-direction:column;gap:18px}
+ .feast-involve-card{padding:24px 19px}
+}
+@media(prefers-reduced-motion:reduce){.feast-people-card img{transition:none}}

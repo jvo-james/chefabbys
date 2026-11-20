@@ -458,34 +458,85 @@ h2 em{font-style:normal;color:inherit;}
 @media (max-width: 640px){.brand-logo{width:43px;height:43px;border-radius:13px;padding:3px}.brand{gap:9px}}
 
 /* -------------------------------------------------------------------------
-   Mobile navigation — full-height editorial menu with reliable layering.
+   Mobile navigation — full-height menu, anchored to the viewport.
+   The header must not keep a transform while the fixed menu is open.
    ------------------------------------------------------------------------- */
 @media (max-width: 900px){
   body.nav-open{overflow:hidden;overscroll-behavior:none}
-  body.nav-open .site-header{z-index:2000;transform:translateY(0)!important;background:#f8f1e6!important;border-color:rgba(57,36,23,.12)!important;box-shadow:0 8px 24px rgba(38,23,15,.08)!important;color:var(--ink)!important}
+  body.nav-open .site-header{z-index:2000;transform:none!important;will-change:auto!important;background:#f8f1e6!important;border-color:rgba(57,36,23,.12)!important;box-shadow:0 8px 24px rgba(38,23,15,.08)!important;color:var(--ink)!important}
   body.nav-open .site-header .brand-wordmark strong{color:var(--ink)!important}
   body.nav-open .site-header .brand-wordmark small{color:#8d7967!important}
   body.nav-open .site-header .nav-toggle span{background:var(--ink)!important}
-  body.nav-open .main-nav{position:fixed;inset:var(--header-height) 0 0;z-index:2001;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(58px,auto);align-content:start;align-items:stretch;gap:10px;padding:26px clamp(20px,5vw,48px) calc(28px + env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;background-color:#f8f1e6;background-image:radial-gradient(circle at 95% 7%,rgba(207,135,81,.16),transparent 29%),radial-gradient(circle at 4% 83%,rgba(129,67,42,.09),transparent 32%),repeating-linear-gradient(135deg,transparent 0 34px,rgba(91,58,35,.025) 35px 36px);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .24s ease,visibility .24s ease,transform .3s cubic-bezier(.2,.75,.2,1);box-shadow:0 24px 45px rgba(30,17,9,.16);counter-reset:nav-item}
-  body.nav-open .main-nav.is-open{opacity:1;visibility:visible;transform:translateY(0)}
-  body.nav-open .main-nav::before{content:"THE CHEF ABBYS WORLD DIRECTORY";grid-column:1/-1;display:flex;align-items:center;gap:13px;padding:1px 0 12px;color:#9d5937;font:800 9px/1.3 var(--display);letter-spacing:.2em}
-  body.nav-open .main-nav::after{content:"FOOD  ·  CULTURE  ·  TRAVEL     /     ROOTED IN GHANA, SHARED WITH THE WORLD";grid-column:1/-1;display:block;margin-top:7px;padding:18px 0 0;border-top:1px solid rgba(63,39,24,.16);color:#8b7664;font:800 8px/1.7 var(--display);letter-spacing:.14em}
-  body.nav-open .main-nav>a,body.nav-open .main-nav>a:not(.nav-cta){position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;min-height:58px;margin:0;padding:15px 17px;border:1px solid rgba(73,47,30,.12);border-radius:5px;background:rgba(255,252,247,.82);box-shadow:0 4px 12px rgba(58,36,22,.035);color:#2c1c13!important;font:800 10px/1.35 var(--display);letter-spacing:.12em;text-transform:uppercase;white-space:normal;transition:transform .2s ease,border-color .2s ease,background .2s ease}
-  body.nav-open .main-nav>a::before{counter-increment:nav-item;content:counter(nav-item,decimal-leading-zero);display:inline-flex;align-items:center;justify-content:center;flex:0 0 27px;width:27px;height:27px;border-radius:50%;background:#eee1d0;color:#a25031;font:800 8px/1 var(--display);letter-spacing:.05em}
-  body.nav-open .main-nav>a::after{content:"↗";display:block;position:static;flex:0 0 auto;width:auto;height:auto;background:none;color:#a25031;font:400 18px/1 var(--sans);transform:none}
-  body.nav-open .main-nav>a:hover,body.nav-open .main-nav>a:focus-visible{transform:translateY(-2px);border-color:rgba(168,77,45,.48);background:#fffdf9;outline:none}
+  body.nav-open .main-nav{
+    position:fixed;top:var(--header-height);right:0;bottom:0;left:0;z-index:2001;
+    width:100%;height:auto;max-height:calc(100dvh - var(--header-height));
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(62px,auto);
+    align-content:start;align-items:stretch;gap:10px;
+    padding:25px clamp(18px,5vw,48px) calc(25px + env(safe-area-inset-bottom));
+    overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+    background-color:#f8f1e6;
+    background-image:radial-gradient(circle at 95% 7%,rgba(207,135,81,.16),transparent 29%),radial-gradient(circle at 4% 83%,rgba(129,67,42,.09),transparent 32%),repeating-linear-gradient(135deg,transparent 0 34px,rgba(91,58,35,.025) 35px 36px);
+    opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-9px);
+    transition:opacity .24s ease,visibility .24s ease,transform .28s cubic-bezier(.2,.75,.2,1);
+    box-shadow:0 24px 45px rgba(30,17,9,.16);
+  }
+  body.nav-open .main-nav.is-open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+  body.nav-open .main-nav::before{
+    content:"THE CHEF ABBYS WORLD DIRECTORY";grid-column:1/-1;display:flex;align-items:center;
+    padding:1px 0 13px;border-bottom:1px solid rgba(63,39,24,.16);
+    color:#9d5937;font:800 9px/1.3 var(--display);letter-spacing:.2em
+  }
+  body.nav-open .main-nav::after{
+    content:"FOOD · CULTURE · TRAVEL  /  ROOTED IN GHANA, SHARED WITH THE WORLD";
+    grid-column:1/-1;display:block;margin-top:8px;padding:17px 0 0;
+    border-top:1px solid rgba(63,39,24,.16);color:#8b7664;
+    font:800 8px/1.8 var(--display);letter-spacing:.13em
+  }
+  body.nav-open .main-nav>a{
+    position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    min-width:0;min-height:62px;margin:0;padding:15px 16px;
+    border:1px solid rgba(73,47,30,.13);border-radius:4px;
+    background:rgba(255,252,247,.86);box-shadow:0 4px 12px rgba(58,36,22,.035);
+    color:#2c1c13!important;font:800 10px/1.35 var(--display);letter-spacing:.11em;
+    text-transform:uppercase;white-space:normal;transition:transform .2s ease,border-color .2s ease,background .2s ease
+  }
+  body.nav-open .main-nav>a::before{
+    content:"";display:block;flex:0 0 3px;width:3px;height:19px;border-radius:3px;
+    background:linear-gradient(180deg,#d28a59,#9d5031)
+  }
+  body.nav-open .main-nav>a::after{
+    content:"";display:block;position:static;flex:0 0 11px;width:11px;height:11px;
+    border-top:2px solid #a25031;border-right:2px solid #a25031;
+    background:none;transform:rotate(45deg);margin:0 2px 0 5px
+  }
+  body.nav-open .main-nav>a:hover,body.nav-open .main-nav>a:focus-visible{
+    transform:translateY(-2px);border-color:rgba(168,77,45,.48);background:#fffdf9;outline:none
+  }
   body.nav-open .main-nav>a.is-current{border-color:rgba(168,77,45,.42);background:#f1e4d4}
-  body.nav-open .main-nav .nav-cta{grid-column:1/-1;justify-content:space-between;min-height:66px;margin:7px 0 0;padding:17px 20px;border:1px solid #9b442a;border-radius:5px;background:linear-gradient(115deg,#2a1a11,#58301f 72%,#78432a);color:#fffaf2!important;box-shadow:0 12px 24px rgba(68,36,22,.16);font-size:11px;letter-spacing:.16em}
-  body.nav-open .main-nav .nav-cta::before{background:rgba(255,255,255,.12);color:#f1b77b}
-  body.nav-open .main-nav .nav-cta::after{content:"→";color:#f1b77b;font-size:21px}
+  body.nav-open .main-nav .nav-cta{
+    grid-column:1/-1;justify-content:space-between;min-height:66px;margin:5px 0 0;padding:18px 20px;
+    border:1px solid #9b442a;border-radius:4px;
+    background:linear-gradient(115deg,#2a1a11,#58301f 72%,#78432a);
+    color:#fffaf2!important;box-shadow:0 12px 24px rgba(68,36,22,.16);
+    font-size:10px;letter-spacing:.16em
+  }
+  body.nav-open .main-nav .nav-cta::before{height:22px;background:#f1b77b}
+  body.nav-open .main-nav .nav-cta::after{width:12px;height:12px;flex-basis:12px;border-color:#f1b77b;border-width:2px}
+  body.nav-open .main-nav .nav-cta span{display:none}
 }
 @media (max-width: 520px){
-  body.nav-open .main-nav{grid-template-columns:minmax(0,1fr);grid-auto-rows:minmax(48px,auto);gap:8px;padding:18px 18px calc(22px + env(safe-area-inset-bottom))}
-  body.nav-open .main-nav::before{padding-bottom:8px;font-size:8px}
-  body.nav-open .main-nav>a,body.nav-open .main-nav>a:not(.nav-cta){min-height:48px;padding:10px 13px;font-size:9px}
-  body.nav-open .main-nav>a::before{width:25px;height:25px;flex-basis:25px}
-  body.nav-open .main-nav .nav-cta{min-height:56px;margin-top:4px}
+  body.nav-open .main-nav{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(56px,auto);gap:8px;padding:17px 15px calc(18px + env(safe-area-inset-bottom))}
+  body.nav-open .main-nav::before{padding-bottom:10px;font-size:8px}
+  body.nav-open .main-nav>a{min-height:56px;padding:11px 11px;font-size:8.5px;letter-spacing:.08em;gap:8px}
+  body.nav-open .main-nav>a::before{height:16px}
+  body.nav-open .main-nav>a::after{width:9px;height:9px;flex-basis:9px;border-width:1.7px;margin-left:2px}
+  body.nav-open .main-nav .nav-cta{min-height:56px;margin-top:3px;padding:14px 15px;font-size:9px}
   body.nav-open .main-nav::after{font-size:7px;line-height:1.8}
+}
+@media (max-height: 650px) and (max-width: 900px){
+  body.nav-open .main-nav{grid-auto-rows:minmax(48px,auto);gap:7px;padding-top:14px}
+  body.nav-open .main-nav>a{min-height:48px;padding:9px 12px}
+  body.nav-open .main-nav .nav-cta{min-height:51px}
 }
 
 /* -------------------------------------------------------------------------
@@ -539,7 +590,7 @@ body[data-page="home"] .hero-stamp{margin-right:42px}
 .newsletter-form .input-row button:hover{background:#78381f;transform:translateY(-1px)}
 .newsletter-form .input-row button .arrow-icon{border-color:#f3c38f;width:8px;height:8px}
 .newsletter-form>small{display:block;margin:13px 0 0;color:#867669;font:500 10px/1.6 var(--sans)}
-.newsletter-form>small::before{content:"✳";margin-right:7px;color:#b66a42}
+.newsletter-form>small::before{content:none;display:none}
 .newsletter-form .form-feedback{min-height:0;margin:9px 0 0;color:#6c563c;font:600 11px/1.5 var(--sans)}
 .newsletter-form .form-feedback:empty{display:none}
 .page-section-title{font:400 clamp(38px,5vw,64px)/1.03 var(--serif);letter-spacing:-.035em;margin:14px 0 0;color:var(--ink)}
@@ -567,3 +618,35 @@ body[data-page="home"] .hero-stamp{margin-right:42px}
 /* Explicit header offsets keep the mobile drawer aligned to both header sizes. */
 @media (max-width: 900px){body.nav-open .main-nav{inset:72px 0 0}}
 @media (max-width: 640px){body.nav-open .main-nav{inset:68px 0 0}}
+
+
+/* FINAL POLISH — shared masthead, homepage hero and newsletter details. */
+.brand-logo{width:50px;height:50px;flex:0 0 50px;display:block;object-fit:contain;object-position:center;padding:0;border:0;border-radius:50%;background:#fff;box-shadow:none}
+.brand-light .brand-logo{background:#fff;border:0;box-shadow:none}
+@media(max-width:640px){.brand-logo{width:44px;height:44px;flex-basis:44px;padding:0;border-radius:50%}.brand{gap:9px}}
+body[data-page="home"] .home-hero::before{content:none!important;display:none!important}
+.hero-lede{max-width:485px;padding-left:18px;border-left:2px solid #d98d59;color:#f5e9dc;font-size:clamp(16px,1.55vw,20px);line-height:1.68;text-shadow:0 2px 16px rgba(0,0,0,.22);text-wrap:pretty}
+.hero-actions{gap:15px}
+.hero-text-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 15px 0 17px;border:1px solid rgba(255,255,255,.58);border-bottom:1px solid rgba(255,255,255,.58);background:rgba(255,255,255,.055);transition:background .2s,border-color .2s,color .2s}
+.hero-text-link:hover{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero-text-link span{display:inline-flex;align-items:center;margin:0;color:#f0b77d}
+.hero-text-link .arrow-icon{width:9px;height:9px;border-color:currentColor}
+.newsletter-form .input-row button span{color:#fff!important;font-size:9px;margin:0;line-height:1.2}
+.newsletter-form>small::before{content:none!important;display:none!important}
+@media(max-width:640px){
+  .hero-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;align-items:stretch;width:100%;max-width:440px;flex-wrap:nowrap}
+  .hero-actions .button,.hero-actions .hero-text-link{width:100%;min-width:0;min-height:49px;justify-content:center;gap:7px;padding:10px 8px;white-space:nowrap;font-size:8px;letter-spacing:.07em}
+  .hero-actions .button span{margin-left:0}
+  .hero-actions .button .arrow-icon,.hero-actions .hero-text-link .arrow-icon{width:8px;height:8px}
+}
+@media(max-width:360px){
+  .hero-actions{gap:7px}
+  .hero-actions .button,.hero-actions .hero-text-link{font-size:7.5px;padding-inline:6px;letter-spacing:.045em}
+}
+
+/* Keep the homepage hero clean: remove the circular seal as well as the portrait ring. */
+body[data-page="home"] .hero-stamp{width:auto;height:auto;min-width:0;border:0;border-left:1px solid rgba(255,255,255,.58);border-radius:0;outline:0;outline-offset:0;transform:none;padding:12px 0 12px 19px;margin-right:3%;align-items:flex-start;text-align:left;background:transparent}
+body[data-page="home"] .hero-stamp span{font-size:8px;color:#efb77f;letter-spacing:.18em}
+body[data-page="home"] .hero-stamp b{font-size:27px;line-height:.95;margin:7px 0;color:#fff2e4}
+body[data-page="home"] .hero-stamp small{font-size:7px;letter-spacing:.12em;color:#e7d7c6}
+@media(max-width:900px){body[data-page="home"] .hero-stamp{display:none}}

@@ -1,6 +1,6 @@
 
 window.CHEF_ABBYS_IMAGES = {
-  brandLogo: "images/logo.jpg",
+  brandLogo: "images/brand-logo-round.png",
   siteFavicon: "images/logo.jpg",
 
   // HOME — hero, editorial collage, recipes and home-page features
