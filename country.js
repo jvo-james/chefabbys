@@ -8,48 +8,48 @@
     'Ghana': {
       intro: 'A table shaped by generosity, bold flavours and the joy of sharing.',
       description: 'Ghanaian food stories move from the morning waakye seller to family pots of jollof and the familiar comfort of kenkey. Each dish carries a different rhythm of the country, from the market to the home kitchen.',
-      dishes: [{name:'Waakye',image:'ghana',note:'A much-loved rice and beans dish often enjoyed with a generous mix of accompaniments.'},{name:'Kenkey',image:'foodPrep',note:'A fermented maize staple with a place in everyday meals and coastal food culture.'},{name:'Jollof rice',image:'jollof',note:'A celebratory one-pot favourite with regional variations and loyal fans.'}]
+      dishes: [{name:'Waakye',image:'countryGhanaWaakye',note:'A much-loved rice and beans dish often enjoyed with a generous mix of accompaniments.'},{name:'Kenkey',image:'countryGhanaKenkey',note:'A fermented maize staple with a place in everyday meals and coastal food culture.'},{name:'Jollof rice',image:'countryGhanaJollof',note:'A celebratory one-pot favourite with regional variations and loyal fans.'}]
     },
     'Benin': {
       intro: 'A West African food story with its own ingredients, methods and traditions.',
       description: 'Benin brings together coastal influences, market flavours and dishes rooted in local ingredients. Amiwo is one of the Beninese foods featured in Chef Abbys’ public food storytelling, inviting a closer look at the region’s kitchens.',
-      dishes: [{name:'Amiwo',image:'amiwo',note:'A rich corn-based dish that has featured in Chef Abbys’ exploration of African cuisine.'}]
+      dishes: [{name:'Amiwo',image:'countryBeninAmiwo',note:'A rich corn-based dish that has featured in Chef Abbys’ exploration of African cuisine.'}]
     },
     'Burkina Faso': {
       intro: 'A food culture where local ingredients tell stories of land and community.',
       description: 'Burkina Faso’s food traditions are shaped by grains, leafy vegetables and the everyday knowledge passed between cooks. Babenda is one of the dishes Chef Abbys has brought to a wider audience through her cooking videos.',
-      dishes: [{name:'Babenda',image:'babenda',note:'A traditional leafy dish featured in Chef Abbys’ African food storytelling.'}]
+      dishes: [{name:'Babenda',image:'countryBurkinaBabenda',note:'A traditional leafy dish featured in Chef Abbys’ African food storytelling.'}]
     },
     'Nigeria': {
       intro: 'A vast food landscape, alive with regional tastes and strong culinary identities.',
       description: 'Nigeria’s food culture spans many communities and landscapes. Its kitchens bring together grains, roots, peppers, leafy vegetables and richly layered stews, with each region adding its own character to the table.',
-      dishes: [{name:'A place for food stories',image:'foodSpread',note:'Explore the ingredients, markets and home cooking traditions that make each region distinct.'}]
+      dishes: [{name:'A place for food stories',image:'countryNigeriaTable',note:'Explore the ingredients, markets and home cooking traditions that make each region distinct.'}]
     },
     'Senegal': {
       intro: 'Coastal flavours, shared bowls and food traditions with deep roots.',
       description: 'Senegal’s food culture is shaped by the Atlantic coast, local grains and the pleasure of eating together. Dakar’s markets and kitchens offer a rich starting point for discovering the country through its food.',
-      dishes: [{name:'A place for food stories',image:'foodSpread',note:'Follow the ingredients, dishes and people that give Senegalese food its character.'}]
+      dishes: [{name:'A place for food stories',image:'countrySenegalTable',note:'Follow the ingredients, dishes and people that give Senegalese food its character.'}]
     },
     'Côte d’Ivoire': {
       intro: 'A lively food culture shaped by regional ingredients and everyday creativity.',
       description: 'Côte d’Ivoire brings together a wide range of food traditions, from cassava and plantain to grains, fish and sauces. Its markets and shared meals offer a vivid way into the country’s everyday life.',
-      dishes: [{name:'A place for food stories',image:'foodSpread',note:'Explore local ingredients and the food traditions that move from market stalls to family tables.'}]
+      dishes: [{name:'A place for food stories',image:'countryIvoryCoastTable',note:'Explore local ingredients and the food traditions that move from market stalls to family tables.'}]
     },
     'Togo': {
       intro: 'A West African table shaped by neighbourhood markets and family cooking.',
       description: 'Togo’s food culture sits within a rich West African exchange of ingredients and cooking traditions. Lomé is a natural place to begin exploring its markets, street food and everyday meals.',
-      dishes: [{name:'A place for food stories',image:'market',note:'Discover the ingredients, market culture and recipes that shape everyday life.'}]
+      dishes: [{name:'A place for food stories',image:'countryTogoMarket',note:'Discover the ingredients, market culture and recipes that shape everyday life.'}]
     },
     'Cabo Verde': {
       intro: 'Island food traditions shaped by the sea, the seasons and a layered history.',
       description: 'Cabo Verde’s kitchens reflect island life and the movement of people across the Atlantic. Seafood, corn, beans and slow-cooked dishes are part of a food culture shaped by place and memory.',
-      dishes: [{name:'A place for food stories',image:'coast',note:'Follow the island ingredients and dishes that connect food with place.'}]
+      dishes: [{name:'A place for food stories',image:'countryCaboVerdeCoast',note:'Follow the island ingredients and dishes that connect food with place.'}]
     }
   };
   const story = stories[name] || {
     intro: `A closer look at the food culture of ${name}.`,
     description: `Begin in ${country.capital}, then follow the tastes, ingredients and everyday food traditions of ${name}. This notebook brings together the places, people and dishes that make the country’s table its own.`,
-    dishes: [{name:'Markets and everyday food',image:'market',note:`A window into the ingredients and everyday food culture of ${name}.`},{name:'Ingredients with a story',image:'foodPrep',note:'Discover the produce and flavours that shape local cooking.'},{name:'At the family table',image:'foodSpread',note:'Food traditions are often best understood through the meals people share.'}]
+    dishes: [{name:'Markets and everyday food',image:'countryFallbackMarket',note:`A window into the ingredients and everyday food culture of ${name}.`},{name:'Ingredients with a story',image:'countryFallbackIngredients',note:'Discover the produce and flavours that shape local cooking.'},{name:'At the family table',image:'countryFallbackTable',note:'Food traditions are often best understood through the meals people share.'}]
   };
   document.querySelectorAll('[data-country-name]').forEach(element => element.textContent = name);
   const code = document.querySelector('[data-country-code]');

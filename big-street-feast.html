@@ -12,7 +12,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="styles.css" rel="stylesheet"/>
   <link href="big-street-feast.css" rel="stylesheet"/>
-  <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+  <link href="images/logo-placeholder.svg" data-image-href="siteFavicon" rel="icon" type="image/svg+xml"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="patches.css"/>
  </head>
@@ -22,12 +22,7 @@
   </a>
   <header class="site-header" data-header="">
    <a aria-label="Chef Abbys World home" class="brand" href="index.html">
-    <span aria-hidden="true" class="brand-symbol">
-     <i>
-     </i>
-     <b>
-     </b>
-    </span>
+    <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
     <span class="brand-wordmark">
      <strong>
       CHEF ABBYS WORLD
@@ -37,13 +32,13 @@
      </small>
     </span>
    </a>
-   <button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
+   <button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
     <span>
     </span>
     <span>
     </span>
    </button>
-   <nav aria-label="Main navigation" class="main-nav" data-nav="">
+   <nav id="primary-navigation" aria-label="Main navigation" class="main-nav" data-nav="">
     <a data-nav-link="home" href="index.html">
      Home
     </a>
@@ -74,44 +69,19 @@
    </nav>
   </header>
   <main id="main">
-   <section class="feast-hero" data-bg-image="streetFeast">
-    <div class="page-hero-overlay">
-    </div>
-    <div class="wrap page-hero-content">
-     <span class="eyebrow eyebrow-light">
-      Food. Community. Dignity.
-     </span>
-     <h1>
-      A bigger table
-      <br/>
-      for
-      <em>
-       everyone.
-      </em>
-     </h1>
-     <p>
-      Big Street Feast is a community food initiative bringing people together around a simple belief: food should be a source of connection, not a privilege.
-     </p>
-     <a class="button button-light" href="#get-involved">
-      Get involved
-      <span>
-       <i class="arrow-icon arrow-down" aria-hidden="true"></i>
-      </span>
-     </a>
-    </div>
-   </section>
+   
    <section class="section-pad">
     <div class="wrap split-editorial">
      <div class="split-copy">
       <span class="eyebrow">
-       Why it matters
+       Big Street Feast · Why it matters
       </span>
-      <h2>
+      <h1 class="page-section-title">
        A meal can do more than
        
         fill a plate.
        
-      </h2>
+      </h1>
       <p>
        Big Street Feast uses food as a practical way to bring attention to food access and community care. The initiative has grown through editions and partnerships, bringing people together in Accra and Kumasi around food, dignity and community care.
       </p>
@@ -125,7 +95,7 @@
        </span>
       </a>
      </div>
-     <img alt="Community members and volunteers sharing a meal" data-image="community"/>
+     <img alt="Community members and volunteers sharing a meal" data-image="feastCommunityMeal"/>
     </div>
    </section>
    <section class="dark-band" id="impact">
@@ -214,7 +184,7 @@
      <div class="card-grid">
       <article class="editorial-card">
        <div class="card-image">
-        <img alt="Food being prepared for a community meal" data-image="streetFeast"/>
+        <img alt="Food being prepared for a community meal" data-image="feastFoodLine"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -230,7 +200,7 @@
       </article>
       <article class="editorial-card">
        <div class="card-image">
-        <img alt="Volunteers working together" data-image="community"/>
+        <img alt="Volunteers working together" data-image="feastVolunteerTeam"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -246,7 +216,7 @@
       </article>
       <article class="editorial-card">
        <div class="card-image">
-        <img alt="A public gathering" data-image="event"/>
+        <img alt="A public gathering" data-image="feastPublicGathering"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -278,7 +248,7 @@
       <p>
        There are different ways to help: volunteer, sponsor, support logistics, donate resources or partner with the initiative. Let the team guide you to the right channel.
       </p>
-      <img alt="Food preparation for a community event" data-image="foodPrep" style="height:230px;margin-top:24px"/>
+      <img alt="Food preparation for a community event" data-image="feastKitchenPrep" style="height:230px;margin-top:24px"/>
      </div>
      <div class="form-panel">
       <form class="involved-form" data-demo-form="">
@@ -333,12 +303,7 @@
    <div class="footer-top">
     <div class="footer-brand-block">
      <a class="brand brand-light" href="index.html">
-      <span aria-hidden="true" class="brand-symbol">
-       <i>
-       </i>
-       <b>
-       </b>
-      </span>
+      <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
       <span class="brand-wordmark">
        <strong>CHEF ABBYS WORLD</strong>
        <small>FOOD · CULTURE · TRAVEL</small>

@@ -12,7 +12,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="styles.css" rel="stylesheet"/>
   <link href="recipes.css" rel="stylesheet"/>
-  <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+  <link href="images/logo-placeholder.svg" data-image-href="siteFavicon" rel="icon" type="image/svg+xml"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="patches.css"/>
  </head>
@@ -22,12 +22,7 @@
   </a>
   <header class="site-header" data-header="">
    <a aria-label="Chef Abbys World home" class="brand" href="index.html">
-    <span aria-hidden="true" class="brand-symbol">
-     <i>
-     </i>
-     <b>
-     </b>
-    </span>
+    <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
     <span class="brand-wordmark">
      <strong>
       CHEF ABBYS WORLD
@@ -37,13 +32,13 @@
      </small>
     </span>
    </a>
-   <button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
+   <button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
     <span>
     </span>
     <span>
     </span>
    </button>
-   <nav aria-label="Main navigation" class="main-nav" data-nav="">
+   <nav id="primary-navigation" aria-label="Main navigation" class="main-nav" data-nav="">
     <a data-nav-link="home" href="index.html">
      Home
     </a>
@@ -119,7 +114,7 @@
       <article class="recipe-card" data-country="Ghana" data-search="jollof rice tomato pepper Ghana">
        <a href="recipe-detail.html">
         <div class="recipe-card-image">
-         <img alt="Jollof rice" data-image="jollof"/>
+         <img alt="Jollof rice" data-image="recipesJollof"/>
          <span class="recipe-tag">
           Ghana
          </span>
@@ -143,7 +138,7 @@
       <article class="recipe-card" data-country="Ghana" data-search="waakye rice beans Ghana breakfast">
        <a href="recipe-detail.html">
         <div class="recipe-card-image">
-         <img alt="A colourful Ghanaian meal" data-image="waakye"/>
+         <img alt="A colourful Ghanaian meal" data-image="recipesWaakye"/>
          <span class="recipe-tag">
           Ghana
          </span>
@@ -167,7 +162,7 @@
       <article class="recipe-card" data-country="Ghana" data-search="kenkey fish pepper Ghana maize">
        <a href="recipe-detail.html">
         <div class="recipe-card-image">
-         <img alt="A traditional meal served on a plate" data-image="kenkey"/>
+         <img alt="A traditional meal served on a plate" data-image="recipesKenkey"/>
          <span class="recipe-tag">
           Ghana
          </span>
@@ -191,7 +186,7 @@
       <article class="recipe-card" data-country="Benin" data-search="amiwo Benin corn tomato">
        <a href="story.html">
         <div class="recipe-card-image">
-         <img alt="A West African dish" data-image="amiwo"/>
+         <img alt="A West African dish" data-image="recipesAmiwo"/>
          <span class="recipe-tag">
           Benin
          </span>
@@ -215,7 +210,7 @@
       <article class="recipe-card" data-country="Burkina Faso" data-search="babenda Burkina Faso greens">
        <a href="story.html">
         <div class="recipe-card-image">
-         <img alt="A dish with greens" data-image="babenda"/>
+         <img alt="A dish with greens" data-image="recipesBabenda"/>
          <span class="recipe-tag">
           Burkina Faso
          </span>
@@ -239,7 +234,7 @@
       <article class="recipe-card" data-country="Ghana" data-search="market ingredients spices stew vegetables">
        <a href="story.html">
         <div class="recipe-card-image">
-         <img alt="A selection of spices" data-image="spices"/>
+         <img alt="A selection of spices" data-image="recipesSpiceSelection"/>
          <span class="recipe-tag">
           Kitchen notes
          </span>
@@ -280,7 +275,7 @@
       </div>
       <div class="collection-strip">
        <a href="#recipe-search">
-        <img alt="Fresh ingredients" data-image="foodPrep"/>
+        <img alt="Fresh ingredients" data-image="recipesFreshIngredients"/>
         <b>
          Everyday favourites
         </b>
@@ -289,7 +284,7 @@
         </span>
        </a>
        <a href="#recipe-search">
-        <img alt="Spices and ingredients" data-image="spices"/>
+        <img alt="Spices and ingredients" data-image="recipesSpiceDetail"/>
         <b>
          Spice &amp; flavour
         </b>
@@ -298,7 +293,7 @@
         </span>
        </a>
        <a href="explore-africa.html">
-        <img alt="Market produce" data-image="market"/>
+        <img alt="Market produce" data-image="recipesMarketProduce"/>
         <b>
          Across the regions
         </b>
@@ -342,12 +337,7 @@
    <div class="footer-top">
     <div class="footer-brand-block">
      <a class="brand brand-light" href="index.html">
-      <span aria-hidden="true" class="brand-symbol">
-       <i>
-       </i>
-       <b>
-       </b>
-      </span>
+      <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
       <span class="brand-wordmark">
        <strong>CHEF ABBYS WORLD</strong>
        <small>FOOD · CULTURE · TRAVEL</small>

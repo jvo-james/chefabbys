@@ -12,7 +12,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="styles.css" rel="stylesheet"/>
   <link href="journal.css" rel="stylesheet"/>
-  <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+  <link href="images/logo-placeholder.svg" data-image-href="siteFavicon" rel="icon" type="image/svg+xml"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="patches.css"/>
  </head>
@@ -22,12 +22,7 @@
   </a>
   <header class="site-header" data-header="">
    <a aria-label="Chef Abbys World home" class="brand" href="index.html">
-    <span aria-hidden="true" class="brand-symbol">
-     <i>
-     </i>
-     <b>
-     </b>
-    </span>
+    <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
     <span class="brand-wordmark">
      <strong>
       CHEF ABBYS WORLD
@@ -37,13 +32,13 @@
      </small>
     </span>
    </a>
-   <button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
+   <button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
     <span>
     </span>
     <span>
     </span>
    </button>
-   <nav aria-label="Main navigation" class="main-nav" data-nav="">
+   <nav id="primary-navigation" aria-label="Main navigation" class="main-nav" data-nav="">
     <a data-nav-link="home" href="index.html">
      Home
     </a>
@@ -95,7 +90,7 @@
      </div>
      <div class="journal-feature">
       <a class="journal-feature-image" href="story.html">
-       <img alt="A scenic view from a travel destination" data-image="travel"/>
+       <img alt="A scenic view from a travel destination" data-image="journalTravelFeature"/>
       </a>
       <div class="journal-feature-copy" id="social-fest-2026">
        <span class="meta-line">
@@ -133,7 +128,7 @@
      </div>
      <div class="journal-list">
       <article class="journal-card" data-category="news">
-       <img alt="An event venue" data-image="event"/>
+       <img alt="An event venue" data-image="journalEventVenue"/>
        <div>
         <span class="meta-line">
          News &amp; updates / November 2026
@@ -153,7 +148,7 @@
        </div>
       </article>
       <article class="journal-card" data-category="food">
-       <img alt="A market with fresh produce" data-image="market"/>
+       <img alt="A market with fresh produce" data-image="journalMarketDispatch"/>
        <div>
         <span class="meta-line">
          Food stories / Field notes
@@ -173,7 +168,7 @@
        </div>
       </article>
       <article class="journal-card" data-category="press">
-       <img alt="A newspaper and media desk" data-image="press"/>
+       <img alt="A newspaper and media desk" data-image="journalPressDesk"/>
        <div>
         <span class="meta-line">
          Press &amp; media / 2025
@@ -193,7 +188,7 @@
        </div>
       </article>
       <article class="journal-card" data-category="news">
-       <img alt="Food served at a community event" data-image="streetFeast"/>
+       <img alt="Food served at a community event" data-image="journalCommunityTable"/>
        <div>
         <span class="meta-line">
          Community / October 2026
@@ -213,7 +208,7 @@
        </div>
       </article>
       <article class="journal-card" data-category="news">
-       <img alt="A calm coastline" data-image="coast"/>
+       <img alt="A calm coastline" data-image="journalCoastFeature"/>
        <div>
         <span class="meta-line">
          Tour announcement / August 2026
@@ -323,7 +318,7 @@
        </div>
       </div>
       <aside class="event-sidebar">
-       <img alt="An event audience in a venue" data-image="event"/>
+       <img alt="An event audience in a venue" data-image="journalAudienceMoment"/>
        <h3>
         Want to invite Chef Abbys?
        </h3>
@@ -357,20 +352,17 @@
       </p>
      </div>
      <form class="newsletter-form" data-newsletter="">
-      <label for="journal-email">
-       Email address
-      </label>
+      <span class="newsletter-form-kicker">A NOTE FROM THE KITCHEN</span>
+      <label for="journal-email">Your email address</label>
       <div class="input-row">
-       <input id="journal-email" placeholder="you@example.com" required="" type="email"/>
+       <input id="journal-email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required="" type="email"/>
        <button type="submit">
-        Subscribe
-        <span>
-         <i class="arrow-icon" aria-hidden="true"></i>
-        </span>
+        <span>Subscribe</span>
+        <i class="arrow-icon" aria-hidden="true"></i>
        </button>
       </div>
-      <p aria-live="polite" class="form-feedback">
-      </p>
+      <small>Thoughtful stories, food journeys and news. No noise, just the good stuff.</small>
+      <p aria-live="polite" role="status" class="form-feedback"></p>
      </form>
     </div>
    </section>
@@ -379,12 +371,7 @@
    <div class="footer-top">
     <div class="footer-brand-block">
      <a class="brand brand-light" href="index.html">
-      <span aria-hidden="true" class="brand-symbol">
-       <i>
-       </i>
-       <b>
-       </b>
-      </span>
+      <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
       <span class="brand-wordmark">
        <strong>CHEF ABBYS WORLD</strong>
        <small>FOOD · CULTURE · TRAVEL</small>

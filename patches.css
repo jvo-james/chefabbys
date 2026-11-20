@@ -447,3 +447,123 @@ h2 em{font-style:normal;color:inherit;}
 .brand-wordmark strong{font-size:clamp(11px,1vw,14px);letter-spacing:.045em;white-space:nowrap;}
 .brand-wordmark small{font-size:6.5px;letter-spacing:.17em;}
 @media(max-width:640px){.brand{gap:8px}.brand-symbol{width:29px;height:34px}.brand-wordmark strong{font-size:11px;letter-spacing:.025em}.brand-wordmark small{font-size:6px;letter-spacing:.11em}}
+
+/* -------------------------------------------------------------------------
+   Brand image lockup — swap the single brandLogo path in images.js.
+   ------------------------------------------------------------------------- */
+.brand{gap:12px;min-width:0}
+.brand-logo{display:block;flex:0 0 auto;width:48px;height:48px;object-fit:contain;padding:3px;border:1px solid rgba(176,94,57,.3);border-radius:15px;background:#f7efe3;box-shadow:0 5px 16px rgba(38,23,15,.1)}
+.brand-light .brand-logo{background:#f7efe3;border-color:rgba(231,173,114,.55);box-shadow:0 5px 18px rgba(0,0,0,.22)}
+.brand-wordmark{min-width:0}
+@media (max-width: 640px){.brand-logo{width:43px;height:43px;border-radius:13px;padding:3px}.brand{gap:9px}}
+
+/* -------------------------------------------------------------------------
+   Mobile navigation — full-height editorial menu with reliable layering.
+   ------------------------------------------------------------------------- */
+@media (max-width: 900px){
+  body.nav-open{overflow:hidden;overscroll-behavior:none}
+  body.nav-open .site-header{z-index:2000;transform:translateY(0)!important;background:#f8f1e6!important;border-color:rgba(57,36,23,.12)!important;box-shadow:0 8px 24px rgba(38,23,15,.08)!important;color:var(--ink)!important}
+  body.nav-open .site-header .brand-wordmark strong{color:var(--ink)!important}
+  body.nav-open .site-header .brand-wordmark small{color:#8d7967!important}
+  body.nav-open .site-header .nav-toggle span{background:var(--ink)!important}
+  body.nav-open .main-nav{position:fixed;inset:var(--header-height) 0 0;z-index:2001;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(58px,auto);align-content:start;align-items:stretch;gap:10px;padding:26px clamp(20px,5vw,48px) calc(28px + env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;background-color:#f8f1e6;background-image:radial-gradient(circle at 95% 7%,rgba(207,135,81,.16),transparent 29%),radial-gradient(circle at 4% 83%,rgba(129,67,42,.09),transparent 32%),repeating-linear-gradient(135deg,transparent 0 34px,rgba(91,58,35,.025) 35px 36px);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .24s ease,visibility .24s ease,transform .3s cubic-bezier(.2,.75,.2,1);box-shadow:0 24px 45px rgba(30,17,9,.16);counter-reset:nav-item}
+  body.nav-open .main-nav.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+  body.nav-open .main-nav::before{content:"THE CHEF ABBYS WORLD DIRECTORY";grid-column:1/-1;display:flex;align-items:center;gap:13px;padding:1px 0 12px;color:#9d5937;font:800 9px/1.3 var(--display);letter-spacing:.2em}
+  body.nav-open .main-nav::after{content:"FOOD  ·  CULTURE  ·  TRAVEL     /     ROOTED IN GHANA, SHARED WITH THE WORLD";grid-column:1/-1;display:block;margin-top:7px;padding:18px 0 0;border-top:1px solid rgba(63,39,24,.16);color:#8b7664;font:800 8px/1.7 var(--display);letter-spacing:.14em}
+  body.nav-open .main-nav>a,body.nav-open .main-nav>a:not(.nav-cta){position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;min-height:58px;margin:0;padding:15px 17px;border:1px solid rgba(73,47,30,.12);border-radius:5px;background:rgba(255,252,247,.82);box-shadow:0 4px 12px rgba(58,36,22,.035);color:#2c1c13!important;font:800 10px/1.35 var(--display);letter-spacing:.12em;text-transform:uppercase;white-space:normal;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+  body.nav-open .main-nav>a::before{counter-increment:nav-item;content:counter(nav-item,decimal-leading-zero);display:inline-flex;align-items:center;justify-content:center;flex:0 0 27px;width:27px;height:27px;border-radius:50%;background:#eee1d0;color:#a25031;font:800 8px/1 var(--display);letter-spacing:.05em}
+  body.nav-open .main-nav>a::after{content:"↗";display:block;position:static;flex:0 0 auto;width:auto;height:auto;background:none;color:#a25031;font:400 18px/1 var(--sans);transform:none}
+  body.nav-open .main-nav>a:hover,body.nav-open .main-nav>a:focus-visible{transform:translateY(-2px);border-color:rgba(168,77,45,.48);background:#fffdf9;outline:none}
+  body.nav-open .main-nav>a.is-current{border-color:rgba(168,77,45,.42);background:#f1e4d4}
+  body.nav-open .main-nav .nav-cta{grid-column:1/-1;justify-content:space-between;min-height:66px;margin:7px 0 0;padding:17px 20px;border:1px solid #9b442a;border-radius:5px;background:linear-gradient(115deg,#2a1a11,#58301f 72%,#78432a);color:#fffaf2!important;box-shadow:0 12px 24px rgba(68,36,22,.16);font-size:11px;letter-spacing:.16em}
+  body.nav-open .main-nav .nav-cta::before{background:rgba(255,255,255,.12);color:#f1b77b}
+  body.nav-open .main-nav .nav-cta::after{content:"→";color:#f1b77b;font-size:21px}
+}
+@media (max-width: 520px){
+  body.nav-open .main-nav{grid-template-columns:minmax(0,1fr);grid-auto-rows:minmax(48px,auto);gap:8px;padding:18px 18px calc(22px + env(safe-area-inset-bottom))}
+  body.nav-open .main-nav::before{padding-bottom:8px;font-size:8px}
+  body.nav-open .main-nav>a,body.nav-open .main-nav>a:not(.nav-cta){min-height:48px;padding:10px 13px;font-size:9px}
+  body.nav-open .main-nav>a::before{width:25px;height:25px;flex-basis:25px}
+  body.nav-open .main-nav .nav-cta{min-height:56px;margin-top:4px}
+  body.nav-open .main-nav::after{font-size:7px;line-height:1.8}
+}
+
+/* -------------------------------------------------------------------------
+   Homepage portrait hero — preserve the complete photo on desktop and keep
+   the copy in its own dark editorial zone. Mobile retains the tall crop.
+   ------------------------------------------------------------------------- */
+@media (min-width: 901px){
+  body[data-page="home"] .home-hero{background-color:#21140d;background-repeat:no-repeat;background-size:auto 86%;background-position:right 48px center;isolation:isolate}
+  body[data-page="home"] .home-hero::before{content:"";position:absolute;z-index:0;top:50%;right:clamp(18px,5vw,76px);width:43vw;max-width:560px;height:84%;transform:translateY(-50%);border:1px solid rgba(237,194,145,.28);border-radius:48% 48% 45% 45%;pointer-events:none}
+  body[data-page="home"] .home-hero::after{background:linear-gradient(90deg,rgba(27,14,8,.99) 0%,rgba(27,14,8,.96) 29%,rgba(27,14,8,.77) 44%,rgba(27,14,8,.35) 59%,rgba(27,14,8,.1) 76%,rgba(27,14,8,.08) 100%),linear-gradient(0deg,rgba(27,14,8,.48),transparent 36%);z-index:1}
+  body[data-page="home"] .hero-inner{min-height:calc(100svh - var(--header-height));padding-top:clamp(82px,10vh,136px);padding-bottom:112px}
+  body[data-page="home"] .hero-copy{max-width:620px;width:52vw}
+  body[data-page="home"] .hero-stamp{margin-right:42px}
+}
+/* Desktop-first composition is the default; mobile switches back to cover below. */
+body[data-page="home"] .home-hero{background-color:#21140d;background-repeat:no-repeat;background-size:auto 86%;background-position:right 48px center;isolation:isolate}
+body[data-page="home"] .home-hero::before{content:"";position:absolute;z-index:0;top:50%;right:5vw;width:43vw;max-width:560px;height:84%;transform:translateY(-50%);border:1px solid rgba(237,194,145,.28);border-radius:48% 48% 45% 45%;pointer-events:none}
+body[data-page="home"] .home-hero::after{background:linear-gradient(90deg,rgba(27,14,8,.99) 0%,rgba(27,14,8,.96) 29%,rgba(27,14,8,.77) 44%,rgba(27,14,8,.35) 59%,rgba(27,14,8,.1) 76%,rgba(27,14,8,.08) 100%),linear-gradient(0deg,rgba(27,14,8,.48),transparent 36%);z-index:1}
+body[data-page="home"] .hero-inner{min-height:calc(100svh - var(--header-height));padding-top:clamp(82px,10vh,136px);padding-bottom:112px}
+body[data-page="home"] .hero-copy{max-width:620px;width:52vw}
+body[data-page="home"] .hero-stamp{margin-right:42px}
+@media (min-width: 901px) and (max-width:1180px){
+  body[data-page="home"] .home-hero{background-size:auto 78%;background-position:right 8px center}
+  body[data-page="home"] .hero-copy{max-width:55vw}
+}
+@media (max-width: 900px){
+  body[data-page="home"] .home-hero{background-size:cover;background-position:58% center;background-repeat:no-repeat}
+}
+@media (max-width: 640px){
+  body[data-page="home"] .home-hero{background-position:61% center}
+}
+
+/* -------------------------------------------------------------------------
+   Newsletter — the email field is a clear, high-contrast, touch-friendly
+   control rather than a thin underline at the edge of the page.
+   ------------------------------------------------------------------------- */
+.newsletter-section{position:relative;isolation:isolate;gap:clamp(26px,5vw,72px);padding:clamp(28px,5vw,64px);border:1px solid rgba(91,58,37,.16);background:linear-gradient(120deg,#f0e4d3,#f7efe4 58%,#eee0cd);box-shadow:0 22px 55px rgba(50,30,16,.07);overflow:hidden}
+.newsletter-section::before{content:"";position:absolute;z-index:-1;right:-90px;top:-130px;width:340px;height:340px;border:1px solid rgba(168,77,45,.17);border-radius:50%;box-shadow:0 0 0 22px rgba(168,77,45,.025),0 0 0 46px rgba(168,77,45,.02)}
+.newsletter-section>div:first-child{position:relative;max-width:500px;align-self:center}
+.newsletter-section h2{max-width:440px;font-size:clamp(39px,5.2vw,66px);line-height:.98;letter-spacing:-.04em}
+.newsletter-section .section-intro{max-width:410px;font-size:14px;line-height:1.7;color:#6f5d4e}
+.newsletter-form{position:relative;display:block;align-self:center;width:100%;max-width:640px;margin:0;padding:clamp(22px,3vw,34px);border:1px solid rgba(90,57,36,.13);border-radius:7px;background:rgba(255,252,247,.92);box-shadow:0 16px 36px rgba(55,33,20,.09)}
+.newsletter-form-kicker{display:flex;align-items:center;gap:10px;margin:0 0 17px;color:#a45332;font:800 8px/1.3 var(--display);letter-spacing:.2em}
+.newsletter-form-kicker::before{content:"";width:24px;height:1px;background:#c77a4a}
+.newsletter-form label{display:block;margin:0 0 9px;color:#4a3526;font:800 10px/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase}
+.newsletter-form .input-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center;min-height:70px;padding:6px;border:1px solid #ddcbb7;border-radius:5px;background:#fff;box-shadow:inset 0 1px 3px rgba(45,28,16,.035)}
+.newsletter-form .input-row input{width:100%;min-width:0;min-height:56px;margin:0;padding:13px 15px;border:0!important;border-radius:3px;background:transparent!important;box-shadow:none!important;color:var(--ink);font:500 14px/1.4 var(--sans)}
+.newsletter-form .input-row input::placeholder{color:#a19488;opacity:1}
+.newsletter-form .input-row input:focus-visible{outline:2px solid rgba(168,77,45,.42);outline-offset:-2px}
+.newsletter-form .input-row button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-width:145px;min-height:56px;padding:0 19px;border:0;border-radius:3px;background:var(--rust);color:#fffaf3;font:800 9px/1.2 var(--display);letter-spacing:.1em;text-transform:uppercase;transition:background .2s,transform .2s}
+.newsletter-form .input-row button:hover{background:#78381f;transform:translateY(-1px)}
+.newsletter-form .input-row button .arrow-icon{border-color:#f3c38f;width:8px;height:8px}
+.newsletter-form>small{display:block;margin:13px 0 0;color:#867669;font:500 10px/1.6 var(--sans)}
+.newsletter-form>small::before{content:"✳";margin-right:7px;color:#b66a42}
+.newsletter-form .form-feedback{min-height:0;margin:9px 0 0;color:#6c563c;font:600 11px/1.5 var(--sans)}
+.newsletter-form .form-feedback:empty{display:none}
+.page-section-title{font:400 clamp(38px,5vw,64px)/1.03 var(--serif);letter-spacing:-.035em;margin:14px 0 0;color:var(--ink)}
+@media (max-width: 900px){
+  .newsletter-section,.journal-newsletter{grid-template-columns:1fr;gap:23px;padding:clamp(24px,5vw,42px)}
+  .newsletter-section>div:first-child{max-width:620px}
+  .newsletter-section h2{max-width:540px}
+  .newsletter-form{max-width:none}
+}
+@media (max-width: 520px){
+  .newsletter-section{padding:24px 18px;gap:18px}
+  .newsletter-form{padding:20px 16px}
+  .newsletter-form .input-row{grid-template-columns:minmax(0,1fr);gap:8px;padding:7px}
+  .newsletter-form .input-row input{min-height:54px;padding-inline:12px}
+  .newsletter-form .input-row button{width:100%;min-height:52px}
+  .newsletter-section h2{font-size:clamp(38px,11vw,50px)}
+}
+
+/* Keep the expanded wordmark and all desktop navigation links comfortably apart. */
+@media (min-width: 901px){
+  .brand{flex:0 0 auto}
+  .main-nav{flex:0 1 auto;gap:clamp(10px,1.1vw,16px)}
+  .main-nav>a{font-size:8px;letter-spacing:.065em}
+}
+/* Explicit header offsets keep the mobile drawer aligned to both header sizes. */
+@media (max-width: 900px){body.nav-open .main-nav{inset:72px 0 0}}
+@media (max-width: 640px){body.nav-open .main-nav{inset:68px 0 0}}

@@ -12,7 +12,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="styles.css" rel="stylesheet"/>
   <link href="casof.css" rel="stylesheet"/>
-  <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+  <link href="images/logo-placeholder.svg" data-image-href="siteFavicon" rel="icon" type="image/svg+xml"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="patches.css"/>
  </head>
@@ -22,12 +22,7 @@
   </a>
   <header class="site-header" data-header="">
    <a aria-label="Chef Abbys World home" class="brand" href="index.html">
-    <span aria-hidden="true" class="brand-symbol">
-     <i>
-     </i>
-     <b>
-     </b>
-    </span>
+    <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
     <span class="brand-wordmark">
      <strong>
       CHEF ABBYS WORLD
@@ -37,13 +32,13 @@
      </small>
     </span>
    </a>
-   <button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
+   <button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
     <span>
     </span>
     <span>
     </span>
    </button>
-   <nav aria-label="Main navigation" class="main-nav" data-nav="">
+   <nav id="primary-navigation" aria-label="Main navigation" class="main-nav" data-nav="">
     <a data-nav-link="home" href="index.html">
      Home
     </a>
@@ -74,44 +69,20 @@
    </nav>
   </header>
   <main id="main">
-   <section class="page-hero" data-bg-image="classroom">
-    <div class="page-hero-overlay">
-    </div>
-    <div class="wrap page-hero-content">
-     <span class="eyebrow eyebrow-light">
-      Chef Abbys School of Food
-     </span>
-     <h1>
-      Learn with
-      <br/>
-      <em>
-       your senses.
-      </em>
-     </h1>
-     <p>
-      A home for culinary learning, African food knowledge and the joy of making something with your hands.
-     </p>
-     <a class="button button-light" href="#interest">
-      Register your interest
-      <span>
-       <i class="arrow-icon arrow-down" aria-hidden="true"></i>
-      </span>
-     </a>
-    </div>
-   </section>
+   
    <section class="section-pad">
     <div class="wrap split-editorial">
      <div class="split-copy">
       <span class="eyebrow">
        About Chef Abbys School of Food
       </span>
-      <h2>
+      <h1 class="page-section-title">
        Skills in the kitchen.
        <br/>
        
         Stories beyond it.
        
-      </h2>
+      </h1>
       <p>
        Chef Abbys School of Food (CASOF) is the learning space within Chef Abbys World. It brings practical cooking, food heritage and the joy of learning around one table.
       </p>
@@ -133,7 +104,7 @@
        </a>
       </p>
      </div>
-     <img alt="A close view of a cooking class in progress" data-image="course"/>
+     <img alt="A close view of a cooking class in progress" data-image="casofClassroomFeature"/>
     </div>
    </section>
    <section class="section-pad" id="programmes" style="background:#f0e7da">
@@ -157,7 +128,7 @@
      <div class="card-grid">
       <article class="editorial-card course-card">
        <div class="card-image">
-        <img alt="Fresh ingredients laid out for cooking" data-image="foodPrep"/>
+        <img alt="Fresh ingredients laid out for cooking" data-image="casofIngredientLesson"/>
        </div>
        <div class="card-body">
         <span class="course-type">
@@ -179,7 +150,7 @@
       </article>
       <article class="editorial-card course-card">
        <div class="card-image">
-        <img alt="Fresh ingredients at a market" data-image="market"/>
+        <img alt="Fresh ingredients at a market" data-image="casofMarketLesson"/>
        </div>
        <div class="card-body">
         <span class="course-type">
@@ -201,7 +172,7 @@
       </article>
       <article class="editorial-card course-card">
        <div class="card-image">
-        <img alt="A group cooking together" data-image="classroom"/>
+        <img alt="A group cooking together" data-image="casofGroupSession"/>
        </div>
        <div class="card-body">
         <span class="course-type">
@@ -288,7 +259,7 @@
       <p>
        Tell us what you would like to learn. We will be glad to hear from you.
       </p>
-      <img alt="Students learning in a kitchen" data-image="classroom" style="height:230px;margin-top:25px"/>
+      <img alt="Students learning in a kitchen" data-image="casofStudentSession" style="height:230px;margin-top:25px"/>
      </div>
      <div class="form-panel">
       <form class="interest-form" data-demo-form="">
@@ -340,12 +311,7 @@
    <div class="footer-top">
     <div class="footer-brand-block">
      <a class="brand brand-light" href="index.html">
-      <span aria-hidden="true" class="brand-symbol">
-       <i>
-       </i>
-       <b>
-       </b>
-      </span>
+      <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
       <span class="brand-wordmark">
        <strong>CHEF ABBYS WORLD</strong>
        <small>FOOD · CULTURE · TRAVEL</small>

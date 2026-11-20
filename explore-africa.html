@@ -12,7 +12,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="styles.css" rel="stylesheet"/>
   <link href="explore-africa.css" rel="stylesheet"/>
-  <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+  <link href="images/logo-placeholder.svg" data-image-href="siteFavicon" rel="icon" type="image/svg+xml"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="patches.css"/>
  </head>
@@ -22,12 +22,7 @@
   </a>
   <header class="site-header" data-header="">
    <a aria-label="Chef Abbys World home" class="brand" href="index.html">
-    <span aria-hidden="true" class="brand-symbol">
-     <i>
-     </i>
-     <b>
-     </b>
-    </span>
+    <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
     <span class="brand-wordmark">
      <strong>
       CHEF ABBYS WORLD
@@ -37,13 +32,13 @@
      </small>
     </span>
    </a>
-   <button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
+   <button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
     <span>
     </span>
     <span>
     </span>
    </button>
-   <nav aria-label="Main navigation" class="main-nav" data-nav="">
+   <nav id="primary-navigation" aria-label="Main navigation" class="main-nav" data-nav="">
     <a data-nav-link="home" href="index.html">
      Home
     </a>
@@ -156,7 +151,7 @@
      <div class="card-grid">
       <a class="editorial-card" href="country.html?name=Ghana">
        <div class="card-image">
-        <img alt="Ghanaian food and culture" data-image="ghana"/>
+        <img alt="Ghanaian food and culture" data-image="exploreGhanaFood"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -178,7 +173,7 @@
       </a>
       <a class="editorial-card" href="country.html?name=Benin">
        <div class="card-image">
-        <img alt="A traditional West African meal" data-image="amiwo"/>
+        <img alt="A traditional West African meal" data-image="exploreAmiwoDish"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -200,7 +195,7 @@
       </a>
       <a class="editorial-card" href="country.html?name=Burkina%20Faso">
        <div class="card-image">
-        <img alt="A green vegetable dish" data-image="babenda"/>
+        <img alt="A green vegetable dish" data-image="exploreBabendaDish"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -225,7 +220,7 @@
    </section>
    <section class="dark-band">
     <div class="wrap split-editorial">
-     <img alt="A travel landscape from an African journey" data-image="travel"/>
+     <img alt="A travel landscape from an African journey" data-image="exploreTravelLandscape"/>
      <div class="split-copy">
       <span class="eyebrow eyebrow-light">
        On the road
@@ -261,12 +256,7 @@
    <div class="footer-top">
     <div class="footer-brand-block">
      <a class="brand brand-light" href="index.html">
-      <span aria-hidden="true" class="brand-symbol">
-       <i>
-       </i>
-       <b>
-       </b>
-      </span>
+      <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
       <span class="brand-wordmark">
        <strong>CHEF ABBYS WORLD</strong>
        <small>FOOD · CULTURE · TRAVEL</small>

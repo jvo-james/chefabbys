@@ -12,7 +12,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="styles.css" rel="stylesheet"/>
   <link href="about.css" rel="stylesheet"/>
-  <link href="images/reference-inside-africa.jpg" rel="icon" type="image/jpeg"/>
+  <link href="images/logo-placeholder.svg" data-image-href="siteFavicon" rel="icon" type="image/svg+xml"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="patches.css"/>
  </head>
@@ -22,12 +22,7 @@
   </a>
   <header class="site-header" data-header="">
    <a aria-label="Chef Abbys World home" class="brand" href="index.html">
-    <span aria-hidden="true" class="brand-symbol">
-     <i>
-     </i>
-     <b>
-     </b>
-    </span>
+    <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
     <span class="brand-wordmark">
      <strong>
       CHEF ABBYS WORLD
@@ -37,13 +32,13 @@
      </small>
     </span>
    </a>
-   <button aria-expanded="false" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
+   <button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" class="nav-toggle" data-nav-toggle="" type="button">
     <span>
     </span>
     <span>
     </span>
    </button>
-   <nav aria-label="Main navigation" class="main-nav" data-nav="">
+   <nav id="primary-navigation" aria-label="Main navigation" class="main-nav" data-nav="">
     <a data-nav-link="home" href="index.html">
      Home
     </a>
@@ -82,7 +77,7 @@
       <p>Ghanaian chef, African Food Tourist and storyteller. She uses the kitchen to bring people closer to the places, memories and traditions behind the food.</p>
       <a class="text-link" href="#my-story">Her story <i class="arrow-icon" aria-hidden="true"></i></a>
      </div>
-     <figure class="about-intro-photo"><img data-image="timePortrait" alt="Chef Abbys in her chef's jacket"/><figcaption>ABENA AMOAKOAA SINTIM-ABOAGYE · GHANA</figcaption></figure>
+     <figure class="about-intro-photo"><img data-image="aboutFounderPortrait" alt="Chef Abbys in her chef's jacket"/><figcaption>ABENA AMOAKOAA SINTIM-ABOAGYE · GHANA</figcaption></figure>
     </div>
    </section>
    <section class="section-pad" id="my-story">
@@ -113,7 +108,7 @@
        </span>
       </a>
      </div>
-     <img alt="A chef cooking in a kitchen" data-image="chefCooking"/>
+     <img alt="A chef cooking in a kitchen" data-image="aboutKitchenScene"/>
     </div>
    </section>
    <section class="feature-quote">
@@ -149,7 +144,7 @@
      <div class="card-grid">
       <article class="editorial-card">
        <div class="card-image">
-        <img alt="People and produce at a market" data-image="market"/>
+        <img alt="People and produce at a market" data-image="aboutMarketStory"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -165,7 +160,7 @@
       </article>
       <article class="editorial-card">
        <div class="card-image">
-        <img alt="Fresh ingredients being prepared" data-image="foodPrep"/>
+        <img alt="Fresh ingredients being prepared" data-image="aboutIngredientStory"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -181,7 +176,7 @@
       </article>
       <article class="editorial-card">
        <div class="card-image">
-        <img alt="West African coastline" data-image="coast"/>
+        <img alt="West African coastline" data-image="aboutCoastStory"/>
        </div>
        <div class="card-body">
         <span class="meta-line">
@@ -196,7 +191,7 @@
        </div>
       </article>
       <article class="editorial-card">
-       <div class="card-image"><img alt="Volunteers sharing a meal at a community gathering" data-image="community"/></div>
+       <div class="card-image"><img alt="Volunteers sharing a meal at a community gathering" data-image="aboutCommunityStory"/></div>
        <div class="card-body"><span class="meta-line">Community</span><h3>Let good work reach beyond the kitchen.</h3><p>From food education to Big Street Feast, her work makes space for opportunity, generosity and practical impact.</p></div>
       </article>
      </div>
@@ -204,7 +199,7 @@
    </section>
    <section class="section-pad about-international" style="background:#f0e7da">
     <div class="wrap split-editorial">
-     <img alt="Chef Abbys' Ghanaian cooking experience at an international event" data-image="snapchatKitchen"/>
+     <img alt="Chef Abbys' Ghanaian cooking experience at an international event" data-image="aboutInternationalKitchen"/>
      <div class="split-copy">
       <span class="eyebrow">From Ghana to new tables</span>
       <h2>When the kitchen <span>travels.</span></h2>
@@ -223,7 +218,7 @@
       <p>In September 2026, she spoke with Berla Mundi on the B.You Podcast about choosing her own path. In November, she took that conversation to Social Fest 2026 in McAllen, Texas, where she spoke about how food creators turn recipes into reach.</p>
       <p>She has also shared the story of meeting TikTok CEO Shou Zi Chew, a moment that brought home how far a journey that began with a simple cooking video had travelled. In November 2025, she was also recognised at the Pulse Influencer Awards, taking home honours across food, TikTok and innovation categories.</p>
      </div>
-     <img alt="Chef Abbys at a culinary and creator event" data-image="socialFest"/>
+     <img alt="Chef Abbys at a culinary and creator event" data-image="aboutCreatorEvent"/>
     </div>
    </section>
    <section class="dark-band">
@@ -268,7 +263,7 @@
    </section>
    <section class="section-pad">
     <div class="wrap split-editorial">
-     <img alt="A scenic road through a green landscape" data-image="travel"/>
+     <img alt="A scenic road through a green landscape" data-image="aboutTravelStory"/>
      <div class="split-copy">
       <span class="eyebrow">
        The journey keeps moving
@@ -296,12 +291,7 @@
    <div class="footer-top">
     <div class="footer-brand-block">
      <a class="brand brand-light" href="index.html">
-      <span aria-hidden="true" class="brand-symbol">
-       <i>
-       </i>
-       <b>
-       </b>
-      </span>
+      <img class="brand-logo" data-image="brandLogo" alt="" width="48" height="48"/>
       <span class="brand-wordmark">
        <strong>CHEF ABBYS WORLD</strong>
        <small>FOOD · CULTURE · TRAVEL</small>

@@ -10,6 +10,10 @@
     const source = assets[element.dataset.bgImage];
     if (source) element.style.backgroundImage = `url("${source}")`;
   });
+  document.querySelectorAll('[data-image-href]').forEach((element) => {
+    const source = assets[element.dataset.imageHref];
+    if (source) element.href = source;
+  });
   document.querySelectorAll('[data-year]').forEach((element) => {
     element.textContent = new Date().getFullYear();
   });
@@ -58,24 +62,59 @@
 
   const toggle = document.querySelector('[data-nav-toggle]');
   const nav = document.querySelector('[data-nav]');
-  const closeNavigation = () => {
+  const focusableNavItems = () => nav ? [...nav.querySelectorAll('a[href]')] : [];
+  const closeNavigation = ({ restoreFocus = false } = {}) => {
     if (!toggle || !nav) return;
     nav.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation');
     document.body.classList.remove('nav-open');
     header?.classList.remove('is-hidden');
+    if (restoreFocus) toggle.focus({ preventScroll: true });
+  };
+  const openNavigation = () => {
+    if (!toggle || !nav) return;
+    // A transformed header creates a containing block for fixed descendants.
+    // Clear the hide-on-scroll state before revealing the full-screen menu.
+    header?.classList.remove('is-hidden');
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close navigation');
+    document.body.classList.add('nav-open');
+    window.requestAnimationFrame(() => focusableNavItems()[0]?.focus({ preventScroll: true }));
   };
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      const isOpen = toggle.getAttribute('aria-expanded') !== 'true';
-      toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-      nav.classList.toggle('is-open', isOpen);
-      document.body.classList.toggle('nav-open', isOpen);
-      if (isOpen) header?.classList.remove('is-hidden');
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closeNavigation({ restoreFocus: true });
+      else openNavigation();
     });
-    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNavigation));
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeNavigation()));
+    document.addEventListener('keydown', (event) => {
+      if (!document.body.classList.contains('nav-open')) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeNavigation({ restoreFocus: true });
+        return;
+      }
+      if (event.key === 'Tab') {
+        const items = [toggle, ...focusableNavItems()];
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (document.body.classList.contains('nav-open') && !header?.contains(event.target)) {
+        closeNavigation();
+      }
+    });
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900) closeNavigation();
     });
@@ -124,7 +163,7 @@
       const feedback = form.querySelector('.form-feedback');
       if (feedback) {
         feedback.textContent = form.hasAttribute('data-newsletter')
-          ? 'Thank you. Keep an eye on your inbox for stories from the table.'
+          ? 'Thanks for your interest. This form still needs to be connected to the mailing list.'
           : 'Thank you for reaching out. Your interest means a lot.';
       }
       form.reset();
