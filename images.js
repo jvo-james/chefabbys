@@ -7,8 +7,8 @@
  * The brandLogo key is the logo placeholder used in the header and footer.
  */
 window.CHEF_ABBYS_IMAGES = {
-  brandLogo: "images/logo-placeholder.svg",
-  siteFavicon: "images/logo-placeholder.svg",
+  brandLogo: "images/logo.jpg",
+  siteFavicon: "images/logo.jpg",
 
   // HOME — hero, editorial collage, recipes and home-page features
   homeHero: "images/homehero.jpg",
