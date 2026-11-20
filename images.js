@@ -14,7 +14,7 @@ window.CHEF_ABBYS_IMAGES = {
   babenda: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1100&q=85",
   foodSpread: "images/foodspread.webp",
   foodPrep: "images/foodprep.jpg",
-  travel: "images/travel.webp",
+  travel: "images/travel.jpg",
   coast: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1500&q=85",
   ghana: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=85",
   africanPattern: "images/africanpattern.jpg",
