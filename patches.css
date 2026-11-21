@@ -774,3 +774,101 @@ body[data-page="home"] .hero-lede{
     padding-right:12px;
   }
 }
+
+/* MOBILE HOMEPAGE HERO ACTIONS — use the full content width so both labels fit. */
+@media (max-width: 640px){
+  /* The desktop 52vw copy width was constraining the mobile buttons to half a screen. */
+  body[data-page="home"] .hero-copy{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    flex:1 1 100%;
+  }
+
+  body[data-page="home"] .hero-actions{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:stretch;
+    width:100%;
+    max-width:100%;
+    gap:10px;
+    margin-top:22px;
+  }
+
+  body[data-page="home"] .hero-actions > .button,
+  body[data-page="home"] .hero-actions > .hero-text-link{
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-width:0;
+    min-height:62px;
+    margin:0;
+    padding:10px clamp(8px,2.5vw,14px);
+    gap:clamp(5px,1.8vw,9px);
+    font-size:clamp(9.5px,2.8vw,11.5px);
+    line-height:1.15;
+    letter-spacing:.018em;
+    text-align:center;
+    white-space:normal;
+    overflow:visible;
+  }
+
+  body[data-page="home"] .hero-actions > .button{
+    border:1px solid #f8efe3;
+    background:#f8efe3;
+    color:#2c1c13;
+    font-weight:800;
+  }
+
+  body[data-page="home"] .hero-actions > .hero-text-link{
+    border:1px solid rgba(255,248,238,.82);
+    background:rgba(39,22,14,.2);
+    color:#fff8ee;
+    font-weight:800;
+    text-transform:uppercase;
+  }
+
+  body[data-page="home"] .hero-actions > .button > span,
+  body[data-page="home"] .hero-actions > .hero-text-link > span{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 10px;
+    width:10px;
+    height:12px;
+    min-width:10px;
+    margin:0;
+    padding:0;
+    font-size:12px;
+    line-height:1;
+  }
+
+  body[data-page="home"] .hero-actions .arrow-icon{
+    display:block;
+    width:8px;
+    height:8px;
+    flex:0 0 8px;
+    margin:0;
+    border-width:1.6px;
+  }
+}
+
+@media (max-width: 360px){
+  body[data-page="home"] .hero-actions{gap:7px}
+  body[data-page="home"] .hero-actions > .button,
+  body[data-page="home"] .hero-actions > .hero-text-link{
+    min-height:60px;
+    padding-inline:7px;
+    gap:5px;
+    font-size:9px;
+    letter-spacing:0;
+  }
+  body[data-page="home"] .hero-actions > .button > span,
+  body[data-page="home"] .hero-actions > .hero-text-link > span{
+    flex-basis:9px;
+    width:9px;
+    min-width:9px;
+  }
+}
