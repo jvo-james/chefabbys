@@ -76,13 +76,10 @@
        </i>
        Food. Culture. A whole continent.
       </span>
-      <h1>
-       Every dish
+      <h1 class="hero-headline">
+       Come,
        <br/>
-       has a
-       <em>
-        story.
-       </em>
+       let's eat.
       </h1>
       <p class="hero-lede">
        Come closer to the people, places and traditions that make African food so rich. This is a world best explored one plate at a time.
@@ -576,3 +573,60 @@
  </body>
 </html>
 
+
+
+/* Homepage hero refinement: a warmer, more natural headline and roomier mobile CTAs. */
+body[data-page="home"] .hero-copy .hero-headline{
+  max-width:650px;
+  color:#f8ecdf;
+  font-size:clamp(64px,9.25vw,126px);
+  line-height:.91;
+  letter-spacing:-.052em;
+  font-style:normal;
+  text-wrap:balance;
+}
+@media(max-width:640px){
+  body[data-page="home"] .hero-copy .hero-headline{
+    max-width:100%;
+    font-size:clamp(61px,15.6vw,82px);
+    line-height:.94;
+    letter-spacing:-.048em;
+    margin:21px 0 23px;
+  }
+  body[data-page="home"] .hero-actions{
+    grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);
+    gap:9px;
+    width:100%;
+    max-width:470px;
+  }
+  body[data-page="home"] .hero-actions .button,
+  body[data-page="home"] .hero-actions .hero-text-link{
+    min-height:56px;
+    padding:11px 9px;
+    gap:8px;
+    font-size:clamp(9px,2.7vw,10.5px);
+    line-height:1.15;
+    letter-spacing:.045em;
+    white-space:nowrap;
+  }
+  body[data-page="home"] .hero-actions .hero-text-link{
+    padding-inline:11px;
+  }
+  body[data-page="home"] .hero-actions .button .arrow-icon,
+  body[data-page="home"] .hero-actions .hero-text-link .arrow-icon{
+    width:10px;
+    height:10px;
+    flex:0 0 10px;
+  }
+}
+@media(max-width:360px){
+  body[data-page="home"] .hero-actions{gap:7px}
+  body[data-page="home"] .hero-actions .button,
+  body[data-page="home"] .hero-actions .hero-text-link{
+    min-height:55px;
+    padding-inline:7px;
+    gap:6px;
+    font-size:9px;
+    letter-spacing:.025em;
+  }
+}
